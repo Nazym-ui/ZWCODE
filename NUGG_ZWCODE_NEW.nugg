@@ -1,0 +1,3050 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nugget name="ZWCODE">
+ <CLAS CLSNAME="ZCL_HCM" VERSION="1" LANGU="R" DESCRIPT="Родительский класс чтения инфотипов" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 " ZSAPLINK_PLUGIN_MAJOR_VERSION="0 " ZSAPLINK_PLUGIN_MINOR_VERSION="1 " ZSAPLINK_PLUGIN_BUILD_VERSION="0 " ZSAPLINK_PLUGIN_INFO1="ZSAPLINK_CLASS is part of the main ZSAPLINK project --&gt; This plugin found there instead of ZSAPLINK_PLUGINS projects" ZSAPLINK_PLUGIN_INFO2="SAPLINK homepage: https://www.assembla.com/spaces/saplink/wiki" ZSAPLINK_PLUGIN_INFO3="Download from https://www.assembla.com/code/saplink/subversion/nodes" ZSAPLINK_PLUGIN_INFO4="and navigate to:  trunk -&gt; core -&gt; ZSAPLINK -&gt; CLAS -&gt; ZSAPLINK_CLASS.slnk">
+  <types CLSNAME="ZCL_HCM" CMPNAME="MTYS_OUTPUT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="1 " TYPTYPE="4" SRCROW1="10 " SRCCOLUMN1="4 " SRCROW2="18 " SRCCOLUMN2="28 " TYPESRC_LENG="0 " TYPESRC='BEGIN OF MTYS_OUTPUT.
+           INCLUDE: TYPE t77pr_wa.                    &quot;GIS_EXC
+           TYPES: vbegda TYPE struc-vbegda,          &quot;AP BCEK067227
+           vendda TYPE struc-vendda.          &quot;AP BCEK067227
+  TYPES: info(50) TYPE c.
+  TYPES: anzahl TYPE i.
+  TYPES: rotype TYPE t77pr-otype.
+  TYPES: robjid TYPE t77pr-objid.
+  TYPES: END   OF MTYS_OUTPUT
+'/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <typeUsage CLSNAME="ZCL_HCM" TYPEGROUP="ABAP" VERSION="1" TPUTYPE="0" EXPLICIT="X" IMPLICIT="X"/>
+  <typeUsage CLSNAME="ZCL_HCM" TYPEGROUP="HR" VERSION="1" TPUTYPE="0" EXPLICIT="X" IMPLICIT="X"/>
+  <forwardDeclaration>ABAP</forwardDeclaration>
+  <forwardDeclaration>HR</forwardDeclaration>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="GC_OTYPE_O" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" EXPOSURE="2" STATE="1" EDITORDER="9 " ATTDECLTYP="2" ATTVALUE="&apos;O&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="OTYPE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="GV_BEGDA" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="3 " ATTDECLTYP="1" ATTEXPVIRT="0" TYPTYPE="1" TYPE="BEGDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="GV_ENDDA" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="4 " ATTDECLTYP="1" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ENDDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="GV_OBJID" VERSION="1" LANGU="R" DESCRIPT="Идентификатор объекта" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="1" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HROBJID" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="GV_PLVAR" VERSION="1" LANGU="R" DESCRIPT="Вариант плана" EXPOSURE="2" STATE="1" EDITORDER="14 " ATTDECLTYP="1" ATTVALUE="&apos;01&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PLVAR" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="IT_OUTPUT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " ATTDECLTYP="1" ATTEXPVIRT="0" TYPTYPE="4" SRCROW1="25 " SRCCOLUMN1="4 " SRCROW2="25 " SRCCOLUMN2="38 " TYPESRC_LENG="37 " TYPESRC="it_output TYPE TABLE OF MTYS_OUTPUT
+"/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0000" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="19 " ATTDECLTYP="2" ATTVALUE="&apos;0000&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0001" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="20 " ATTDECLTYP="2" ATTVALUE="&apos;0001&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0002" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="21 " ATTDECLTYP="2" ATTVALUE="&apos;0002&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0007" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="22 " ATTDECLTYP="2" ATTVALUE="&apos;0007&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0008" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="23 " ATTDECLTYP="2" ATTVALUE="&apos;0008&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0105" VERSION="1" LANGU="R" DESCRIPT="Инфо-тип" EXPOSURE="2" STATE="1" EDITORDER="28 " ATTDECLTYP="2" ATTVALUE="&apos;0105&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_0290" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="24 " ATTDECLTYP="2" ATTVALUE="&apos;0290&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_2001" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="25 " ATTDECLTYP="2" ATTVALUE="&apos;2001&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_9000" VERSION="1" LANGU="R" DESCRIPT="Инфо-тип" EXPOSURE="2" STATE="1" EDITORDER="29 " ATTDECLTYP="2" ATTVALUE="&apos;9000&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_9201" VERSION="1" LANGU="R" DESCRIPT="Инфо-тип" EXPOSURE="2" STATE="1" EDITORDER="27 " ATTDECLTYP="2" ATTVALUE="&apos;9201&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PRELP-INFTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_LANGU_KZ" VERSION="1" LANGU="R" DESCRIPT="Код языка" EXPOSURE="2" STATE="1" EDITORDER="16 " ATTDECLTYP="2" ATTVALUE="&apos;KZ&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="EDI_LANGU" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_LANGU_KZ_S" VERSION="1" LANGU="R" DESCRIPT="Код языка" EXPOSURE="2" STATE="1" EDITORDER="18 " ATTDECLTYP="2" ATTVALUE="&apos;뱋&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="LANGU" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_LANGU_RU" VERSION="1" LANGU="R" DESCRIPT="Код языка" EXPOSURE="2" STATE="1" EDITORDER="15 " ATTDECLTYP="2" ATTVALUE="&apos;RU&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="EDI_LANGU" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_LANGU_RU_S" VERSION="1" LANGU="R" DESCRIPT="Код языка" EXPOSURE="2" STATE="1" EDITORDER="17 " ATTDECLTYP="2" ATTVALUE="&apos;R&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="LANGU" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_LGART_1000" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="26 " ATTDECLTYP="2" ATTVALUE="&apos;1000&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="LGART" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_OTYPE_C" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="12 " ATTDECLTYP="2" ATTVALUE="&apos;C&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="OTYPE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_OTYPE_O" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" EXPOSURE="2" STATE="1" EDITORDER="10 " ATTDECLTYP="2" ATTVALUE="&apos;O&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="OTYPE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_OTYPE_P" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" EXPOSURE="2" STATE="1" EDITORDER="13 " ATTDECLTYP="2" ATTVALUE="&apos;P&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="OTYPE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MC_OTYPE_S" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" EXPOSURE="2" STATE="1" EDITORDER="11 " ATTDECLTYP="2" ATTVALUE="&apos;S&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="OTYPE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MV_BEGDA" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="BEGDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MV_ENDDA" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ENDDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MV_OTYPE" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" EXPOSURE="2" STATE="1" EDITORDER="2 " ATTDECLTYP="1" ATTEXPVIRT="0" TYPTYPE="1" TYPE="OTYPE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HCM" CMPNAME="MV_PERNR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PERNR_D" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <method CLSNAME="ZCL_HCM" CMPNAME="AUTHORITY_CHECK" VERSION="1" LANGU="R" DESCRIPT="проверка структурных полномочий" EXPOSURE="2" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="AUTHORITY_CHECK" SCONAME="TT_OUTPUT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="0" TYPE="IT_OUTPUT"/>
+   <source>METHOD authority_check.
+
+    cl_salv_bs_runtime_info=&gt;set(
+            display        = abap_false
+            metadata       = abap_false
+            data           = abap_true ).
+
+    SELECT SINGLE * FROM t77ua INTO @DATA(ls_t77ua) WHERE uname EQ @sy-uname.
+
+    IF sy-subrc = 0.
+      SUBMIT rhauth01 WITH uname = ls_t77ua-uname
+                      WITH profl = ls_t77ua-profl
+                      AND RETURN.
+
+      cl_salv_bs_runtime_info=&gt;get_data(
+      IMPORTING
+      t_data            = TT_OUTPUT ).
+
+      cl_salv_bs_runtime_info=&gt;clear( ). &quot;чистка после submit
+    ELSE.
+      MESSAGE &apos;Нет структурных полномочий&apos; TYPE &apos;I&apos;.
+      RETURN.
+    ENDIF.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HCM" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="R" DESCRIPT="Конструктор" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="CONSTRUCTOR" SCONAME="IV_OBJID" VERSION="1" LANGU="R" DESCRIPT="Табельный номер" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HROBJID" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="CONSTRUCTOR" SCONAME="IV_OTYPE" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" CMPTYPE="1" MTDTYPE="2" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="OTYPE" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="CONSTRUCTOR" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="2" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="CONSTRUCTOR" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="2" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <source>METHOD constructor.
+    gv_objid = iv_objid.
+    gv_begda = iv_begda.
+    gv_endda = iv_endda.
+    MV_OTYPE = IV_OTYPE.
+
+    CALL FUNCTION &apos;RH_GET_ACTIVE_WF_PLVAR&apos;
+      IMPORTING
+        act_plvar       = gv_plvar
+      EXCEPTIONS
+        no_active_plvar = 1
+        OTHERS          = 2.
+
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HCM" CMPNAME="PROCESS_DATES" VERSION="1" LANGU="R" DESCRIPT="Обработка дат для чтения инфотипов" EXPOSURE="2" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="PROCESS_DATES" SCONAME="CH_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="PROCESS_DATES" SCONAME="CH_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA"/>
+   <source>METHOD process_dates.
+    IF ch_begda IS NOT INITIAL.
+      ch_begda = ch_begda.
+    ELSEIF gv_begda IS NOT INITIAL.
+      ch_begda = gv_begda.
+    ELSE.
+      ch_begda = HR_LOW_DATE.
+    ENDIF.
+
+    IF ch_endda IS NOT INITIAL.
+      ch_endda = ch_endda.
+    ELSEIF gv_endda IS NOT INITIAL.
+      ch_endda = gv_endda.
+    ELSE.
+      ch_endda = HR_HIGH_DATE.
+    ENDIF.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" VERSION="1" LANGU="R" DESCRIPT="Универсальное чтение инфотипов" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="IV_OBJID" VERSION="1" LANGU="R" DESCRIPT="Ид объекта" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HROBJID" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="IV_OTYPE" VERSION="1" LANGU="R" DESCRIPT="Тип объекта" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="OTYPE" PARVALUE="MC_OTYPE_P"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="IV_INFTY" VERSION="1" LANGU="R" DESCRIPT="Инфо-тип" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="INFTY"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="IV_SUBTY" VERSION="1" LANGU="R" DESCRIPT="Подтип" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SUBTY" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="ES_INFTY" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="ANY"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="READ_INFOTYPE" SCONAME="ET_INFTY" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="8 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="ANY TABLE"/>
+   <source>METHOD read_infotype.
+
+    DATA: lo_struc    TYPE REF TO data.
+    FIELD-SYMBOLS :
+          &lt;lt_pdata&gt;  TYPE STANDARD TABLE.
+    DATA(lv_begda) = iv_begda.
+    DATA(lv_endda) = iv_endda.
+
+    process_dates(
+      CHANGING
+        ch_begda =  lv_begda &quot; Начало срока действия
+        ch_endda =  lv_endda &quot; Конец срока действия
+    ).
+
+
+    DATA(lv_tabname) = |P{ iv_infty }|.
+    CREATE DATA lo_struc TYPE TABLE OF (lv_tabname) .
+
+    ASSIGN lo_struc-&gt;* TO &lt;lt_pdata&gt; .
+
+
+    CASE iv_otype.
+      WHEN MC_OTYPE_P. &quot; сотрудник
+        IF NOT iv_objid IS INITIAL.
+          DATA(lv_pernr) = iv_objid.
+        ELSEIF NOT gv_objid IS INITIAL.
+          lv_pernr = gv_objid.
+        ELSE.
+          &quot; Выходим, т.к. тут больше делать ннечего
+          RETURN.
+        ENDIF.
+
+
+        IF iv_subty IS NOT INITIAL. &quot; чтение подтипа
+          ##FM_SUBRC_OK
+          CALL FUNCTION &apos;HR_READ_SUBTYPE&apos;
+            EXPORTING
+              pernr           = lv_pernr
+              infty           = iv_infty
+              subty           = iv_subty
+*             SPRPS           = &apos;*&apos;
+              begda           = lv_begda
+              endda           = lv_endda
+            TABLES
+              infty_tab       = &lt;lt_pdata&gt;
+            EXCEPTIONS
+              infty_not_found = 1.
+
+          CHECK sy-subrc = 0.
+
+        ELSE. &quot; чтение инфотипа
+          ##FM_SUBRC_OK
+          CALL FUNCTION &apos;HR_READ_INFOTYPE&apos;
+            EXPORTING
+              pernr           = lv_pernr
+              infty           = iv_infty
+              begda           = lv_begda
+              endda           = lv_endda
+            TABLES
+              infty_tab       = &lt;lt_pdata&gt;
+            EXCEPTIONS
+              infty_not_found = 1
+              OTHERS          = 2.
+
+          CHECK sy-subrc = 0.
+
+        ENDIF.
+
+
+      WHEN OTHERS. &quot; остальные объекты
+        IF NOT iv_objid IS INITIAL.
+          DATA(lv_objid) = iv_objid.
+        ELSEIF NOT gv_objid IS INITIAL.
+          lv_objid = gv_objid.
+        ENDIF.
+
+        DATA(lv_plvar) = gv_plvar.
+
+        IF  iv_otype IS SUPPLIED
+          AND iv_otype IS NOT INITIAL.
+          DATA(lv_otype) = iv_otype.
+        ELSE.
+          lv_otype = gc_otype_o.
+        ENDIF.
+
+        CALL FUNCTION &apos;RH_READ_INFTY&apos;
+          EXPORTING
+            plvar  = lv_plvar
+            otype  = lv_otype
+            objid  = iv_objid
+            subty  = iv_subty
+            begda  = lv_begda
+            endda  = lv_endda
+            infty  = iv_infty
+          TABLES
+            innnn  = &lt;lt_pdata&gt;
+          EXCEPTIONS
+            OTHERS = 1.
+
+        CHECK sy-subrc = 0.
+
+
+    ENDCASE.
+
+
+    CLEAR es_infty.
+    LOOP AT &lt;lt_pdata&gt; INTO es_infty.
+    ENDLOOP.
+
+    et_infty[] = &lt;lt_pdata&gt;[].
+
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HCM" CMPNAME="_CHECK_BEGDA" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="_CHECK_BEGDA" SCONAME="IV_DATUM" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="_CHECK_BEGDA" SCONAME="RV_DATUM" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="BEGDA"/>
+   <source>method _CHECK_BEGDA.
+    if IV_DATUM is not initial.
+      &quot; ничего не делаем, оставляем как есть
+      RV_DATUM = IV_DATUM.
+    elseif mv_begda is not initial.
+      RV_DATUM = mv_begda.
+    else.
+      RV_DATUM = hr_low_date.      &quot; 01.01.1900
+    endif.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HCM" CMPNAME="_CHECK_DATES" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="_CHECK_DATES" SCONAME="CV_BEGDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="_CHECK_DATES" SCONAME="CV_ENDDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA"/>
+   <source>method _CHECK_DATES.
+  &quot; Проверяем, бы ли данные переданы при создании объекта
+    &quot;
+    cv_begda = _CHECK_BEGDA( cv_begda ).
+    &quot;
+    cv_endda = _CHECK_ENDDA( cv_endda ).
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HCM" CMPNAME="_CHECK_ENDDA" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="_CHECK_ENDDA" SCONAME="IV_DATUM" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HCM" CMPNAME="_CHECK_ENDDA" SCONAME="RV_DATUM" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="BEGDA"/>
+   <source>method _CHECK_ENDDA.
+    IF IV_DATUM IS NOT INITIAL.
+      &quot; ничего не делаем, оставляем как есть
+      RV_DATUM = IV_DATUM.
+    ELSEIF mv_endda IS NOT INITIAL.
+      RV_DATUM = mv_endda.
+    ELSE.
+      RV_DATUM = HR_HIGH_DATE.      &quot; 01.01.1900
+    ENDIF.
+  endmethod.</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_HRPY_PERNR_NEW" VERSION="1" LANGU="R" DESCRIPT="Класс для ЗП" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSFINAL="X" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 " ZSAPLINK_PLUGIN_MAJOR_VERSION="0 " ZSAPLINK_PLUGIN_MINOR_VERSION="1 " ZSAPLINK_PLUGIN_BUILD_VERSION="0 " ZSAPLINK_PLUGIN_INFO1="ZSAPLINK_CLASS is part of the main ZSAPLINK project --&gt; This plugin found there instead of ZSAPLINK_PLUGINS projects" ZSAPLINK_PLUGIN_INFO2="SAPLINK homepage: https://www.assembla.com/spaces/saplink/wiki" ZSAPLINK_PLUGIN_INFO3="Download from https://www.assembla.com/code/saplink/subversion/nodes" ZSAPLINK_PLUGIN_INFO4="and navigate to:  trunk -&gt; core -&gt; ZSAPLINK -&gt; CLAS -&gt; ZSAPLINK_CLASS.slnk" REFCLSNAME="ZCL_HCM">
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYS_INPER_DIRECTORY_ENTRY" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="1 " TYPTYPE="4" SRCROW1="11 " SRCCOLUMN1="4 " SRCROW2="17 " SRCCOLUMN2="43 " TYPESRC_LENG="0 " TYPESRC="BEGIN OF mtys_inper_directory_entry.
+    TYPES: ipend TYPE pc261-ipend,
+           iperm TYPE pc261-iperm,
+           inper TYPE pc261-inper,
+           inpty TYPE pc261-inpty,
+           inpid TYPE pc261-inpid,
+           END OF mtys_inper_directory_entry
+"/>
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYT_INPER_DIRECTORY" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="2 " TYPTYPE="4" SRCROW1="19 " SRCCOLUMN1="4 " SRCROW2="19 " SRCCOLUMN2="90 " TYPESRC_LENG="0 " TYPESRC="mtyt_inper_directory TYPE STANDARD TABLE OF mtys_inper_directory_entry WITH DEFAULT KEY
+"/>
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYS_ADJUST_FACTOR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="3 " TYPTYPE="4" SRCROW1="21 " SRCCOLUMN1="4 " SRCROW2="31 " SRCCOLUMN2="30 " TYPESRC_LENG="0 " TYPESRC="BEGIN OF mtys_adjust_factor,
+        adjrule      TYPE t51av_c-adjrule,
+        begda        TYPE sy-datum,
+        endda        TYPE sy-datum,
+        factor       TYPE f,
+        prev_value   TYPE betpe,
+        curr_value   TYPE betpe,
+        curr_value_c TYPE betpe,
+        mode         TYPE abap_bool,
+        mod_factor   TYPE f,
+      END OF mtys_adjust_factor
+"/>
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYS_KZAVE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="4 " TYPTYPE="4" SRCROW1="33 " SRCCOLUMN1="4 " SRCROW2="41 " SRCCOLUMN2="22 " TYPESRC_LENG="0 " TYPESRC="BEGIN OF mtys_kzave,
+        avrule TYPE pc2_kz03-avrule,
+        begda  TYPE pc2_kz03-begda,
+        endda  TYPE pc2_kz03-endda,
+        lgart  TYPE pc2_kz03-lgart,
+        betpe  TYPE pc2_kz03-betpe,
+        anzhl  TYPE pc2_kz03-anzhl,
+        betrg  TYPE pc2_kz03-betrg,
+      END OF mtys_kzave
+"/>
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYT_KZAV" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " TYPTYPE="4" SRCROW1="43 " SRCCOLUMN1="4 " SRCROW2="43 " SRCCOLUMN2="44 " TYPESRC_LENG="0 " TYPESRC="mtyt_kzav TYPE STANDARD TABLE OF pc2_kz03
+"/>
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYT_ADJUST_FACTOR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="6 " TYPTYPE="4" SRCROW1="45 " SRCCOLUMN1="4 " SRCROW2="45 " SRCCOLUMN2="80 " TYPESRC_LENG="0 " TYPESRC="mtyt_adjust_factor TYPE STANDARD TABLE OF mtys_adjust_factor WITH DEFAULT KEY
+"/>
+  <types CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MTYT_KZAVE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="7 " TYPTYPE="4" SRCROW1="47 " SRCCOLUMN1="4 " SRCROW2="47 " SRCCOLUMN2="64 " TYPESRC_LENG="0 " TYPESRC="mtyt_kzave TYPE STANDARD TABLE OF mtys_kzave WITH DEFAULT KEY
+"/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <typeUsage CLSNAME="ZCL_HRPY_PERNR_NEW" TYPEGROUP="ABAP" VERSION="1" TPUTYPE="0" EXPLICIT="X"/>
+  <typeUsage CLSNAME="ZCL_HRPY_PERNR_NEW" TYPEGROUP="HRPAY" VERSION="1" TPUTYPE="0" IMPLICIT="X"/>
+  <forwardDeclaration>ABAP</forwardDeclaration>
+  <forwardDeclaration>HRPAY</forwardDeclaration>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_ADJRULE" VERSION="1" LANGU="R" DESCRIPT="Правило адаптации для основ расчета средних значений" EXPOSURE="2" STATE="1" EDITORDER="4 " ATTDECLTYP="2" ATTVALUE="&apos;KZ01&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ADJRULE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_COMP_RULE" VERSION="1" LANGU="R" DESCRIPT="Правила расчета для средних значений" EXPOSURE="0" STATE="1" EDITORDER="15 " ATTDECLTYP="0" ATTVALUE="&apos;ZZ03&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="AVRULE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_CUMRULE" VERSION="1" LANGU="R" DESCRIPT="Правило кумуляции для основ расчета средних значений" EXPOSURE="2" STATE="1" EDITORDER="3 " ATTDECLTYP="2" ATTVALUE="&apos;KZ01&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="CUMRULE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_LEAVING" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="2" ATTVALUE="&apos;14&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PAY_OCCAT" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_MODIF" VERSION="1" LANGU="R" DESCRIPT="Параметры периода" EXPOSURE="2" STATE="1" EDITORDER="2 " ATTDECLTYP="2" ATTVALUE="&apos;01&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PERMO" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_MOLGA" VERSION="1" LANGU="R" DESCRIPT="Группировка стран" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="2" ATTVALUE="&apos;KZ&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="MOLGA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_PAY_PROG" VERSION="1" LANGU="R" DESCRIPT="PROGNAME" EXPOSURE="0" STATE="1" EDITORDER="17 " ATTDECLTYP="0" ATTVALUE="&apos;HKZCALC0&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PROGNAME" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_PERMO" VERSION="1" LANGU="R" DESCRIPT="Параметры периода" EXPOSURE="2" STATE="1" EDITORDER="10 " ATTDECLTYP="2" ATTVALUE="&apos;01&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PC261-IPERM" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_REGULAR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " ATTDECLTYP="2" ATTVALUE="&apos; &apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PAYTY" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MC_VARIANT" VERSION="1" LANGU="R" DESCRIPT="АВАР: имя варианта (без имени программы)" EXPOSURE="0" STATE="1" EDITORDER="18 " ATTDECLTYP="2" ATTVALUE="&apos;KZ&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="VARIANT" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MS_BUFFER" VERSION="1" LANGU="R" DESCRIPT="Буффер расчета" EXPOSURE="0" STATE="1" EDITORDER="19 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPAY_BUFFER" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MS_PAYKZ_RESULT" VERSION="1" LANGU="R" DESCRIPT="Structure for payroll result: Kazakhstan" EXPOSURE="0" STATE="1" EDITORDER="14 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PAYKZ_RESULT" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MT_EVP_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" EXPOSURE="2" STATE="1" EDITORDER="11 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MT_FULL_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" EXPOSURE="2" STATE="1" EDITORDER="12 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MT_KZAVE" VERSION="1" LANGU="R" DESCRIPT="Таблица средних значений" EXPOSURE="0" STATE="1" EDITORDER="16 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="MTYT_KZAVE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MT_RESULTS" VERSION="1" LANGU="R" DESCRIPT="Тип для таблицы результатов расчета" EXPOSURE="2" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" EXPOSURE="2" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MV_FPPER" VERSION="1" LANGU="R" DESCRIPT="Общий флаг" EXPOSURE="2" STATE="1" EDITORDER="13 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="FLAG" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MV_KZAV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Первая дата таблицы KZAVE" EXPOSURE="0" STATE="1" EDITORDER="20 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="BEGDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MV_KZAV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Последняя дата таблицы KZAVE" EXPOSURE="0" STATE="1" EDITORDER="21 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ENDDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="MV_RELID" VERSION="1" LANGU="R" DESCRIPT="Ид. отношения" EXPOSURE="0" STATE="1" EDITORDER="9 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="RELID" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <inheritance CLSNAME="ZCL_HRPY_PERNR_NEW" REFCLSNAME="ZCL_HCM" VERSION="1" STATE="1"/>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="IV_PERIOD_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="IV_PERIOD_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="IV_APER_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="IS_51AV_C" VERSION="1" LANGU="R" DESCRIPT="Правила адаптации для основ расчета среднего значения" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="T51AV_C"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="IT_RESULTS" VERSION="1" LANGU="R" DESCRIPT="Тип для таблицы результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="IT_P0008" VERSION="1" LANGU="R" DESCRIPT="Осн. запись персонала - инфо-тип 0008 (Основные выплаты)" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="P0008_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="ADJUST_FACTOR" SCONAME="CT_ADJ_FACTOR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYT_ADJUST_FACTOR"/>
+   <source>METHOD adjust_factor.
+  CONSTANTS: lc_pay_increase_feature TYPE t549b-namen VALUE &apos;KZBPC&apos;.
+  DATA: lt_increase_date TYPE STANDARD TABLE OF d,
+        ls_pkz8g         TYPE pkz8g,
+        lv_kzbpc         TYPE c,
+        lv_factor        TYPE f,
+        lv_curr_value    TYPE pc207-betrg,
+        lv_prev_value    TYPE pc207-betrg.
+
+  DATA: operdate TYPE p0001-begda.
+  &quot;
+  READ TABLE ct_adj_factor TRANSPORTING NO FIELDS
+    WITH KEY  begda = iv_period_begda
+              endda = iv_period_endda
+              adjrule = is_51av_c-adjrule.
+  IF sy-subrc EQ 0.
+*    cv_factor = &lt;ls_adjust_factor&gt;-factor.
+    RETURN.
+  ELSE.
+    APPEND INITIAL LINE TO ct_adj_factor ASSIGNING FIELD-SYMBOL(&lt;ls_adjust_factor&gt;).
+    &lt;ls_adjust_factor&gt;-begda = iv_period_begda.
+    &lt;ls_adjust_factor&gt;-endda = iv_period_endda.
+    &lt;ls_adjust_factor&gt;-adjrule = is_51av_c-adjrule.
+  ENDIF.
+  &quot;
+  CLEAR lt_increase_date[].
+  LOOP AT it_results REFERENCE INTO DATA(lr_results)
+                         WHERE evp-fpbeg &lt;= iv_aper_begda
+                           AND evp-fpbeg &gt;= iv_period_begda.
+    LOOP AT lr_results-&gt;inter-wpbp REFERENCE INTO DATA(lr_wpbp)
+                                       WHERE begda &lt;= iv_aper_begda
+                                         AND begda &gt;= iv_period_begda.
+
+*      IF iv_aper_begda+0(6) = lr_wpbp-&gt;begda+0(6).
+*        IF iv_aper_begda &gt;= lr_wpbp-&gt;begda.
+*          CLEAR: operdate.
+*          CONCATENATE lr_wpbp-&gt;begda+0(6) &apos;01&apos; INTO operdate.
+*          LOOP AT it_p0008 REFERENCE INTO DATA(lt_p0008)
+*                        WHERE begda &gt;= operdate
+*                          AND begda &lt;= lr_wpbp-&gt;endda.
+*            MOVE-CORRESPONDING lr_wpbp-&gt;*  TO ls_pkz8g.
+*            MOVE-CORRESPONDING lt_p0008-&gt;* TO ls_pkz8g.
+*            CALL FUNCTION &apos;HR_FEATURE_BACKFIELD&apos;
+*              EXPORTING
+*                feature                     = lc_pay_increase_feature
+*                struc_content               = ls_pkz8g
+*              IMPORTING
+*                back                        = lv_kzbpc
+*              EXCEPTIONS
+*                dummy                       = 1
+*                error_operation             = 2
+*                no_backvalue                = 3
+*                feature_not_generated       = 4
+*                invalid_sign_in_funid       = 5
+*                field_in_report_tab_in_pe03 = 6
+*                OTHERS                      = 7.
+*            IF sy-subrc NE 0.
+**          MOVE-CORRESPONDING sy TO my_error.
+**          PERFORM errors_t100 USING my_error.
+*            ENDIF.
+*            IF lv_kzbpc NE space.
+*              APPEND lt_p0008-&gt;begda TO lt_increase_date.
+*            ENDIF.
+*          ENDLOOP.
+*        ENDIF.
+*      ENDIF.
+
+      LOOP AT it_p0008 REFERENCE INTO DATA(lr_p0008)
+                        WHERE begda &gt;= lr_wpbp-&gt;begda
+                          AND begda &lt;= lr_wpbp-&gt;endda.
+        MOVE-CORRESPONDING lr_wpbp-&gt;*  TO ls_pkz8g.
+        MOVE-CORRESPONDING lr_p0008-&gt;* TO ls_pkz8g.
+        CALL FUNCTION &apos;HR_FEATURE_BACKFIELD&apos;
+          EXPORTING
+            feature                     = lc_pay_increase_feature
+            struc_content               = ls_pkz8g
+          IMPORTING
+            back                        = lv_kzbpc
+          EXCEPTIONS
+            dummy                       = 1
+            error_operation             = 2
+            no_backvalue                = 3
+            feature_not_generated       = 4
+            invalid_sign_in_funid       = 5
+            field_in_report_tab_in_pe03 = 6
+            OTHERS                      = 7.
+        IF sy-subrc NE 0.
+*          MOVE-CORRESPONDING sy TO my_error.
+*          PERFORM errors_t100 USING my_error.
+        ENDIF.
+        IF lv_kzbpc NE space.
+          APPEND lr_p0008-&gt;begda TO lt_increase_date.
+        ENDIF.
+      ENDLOOP.
+    ENDLOOP.
+  ENDLOOP.
+
+  &quot;
+  IF lt_increase_date IS INITIAL.
+    &lt;ls_adjust_factor&gt;-factor = 1.
+    RETURN.
+  ENDIF.
+
+  &quot;Calculate factor after each date of increase
+  lv_factor = 1.
+
+* prevent a multiple processing of the same GI date
+  DELETE ADJACENT DUPLICATES FROM lt_increase_date.
+  LOOP AT lt_increase_date ASSIGNING FIELD-SYMBOL(&lt;lv_increase_date&gt;).
+    CHECK iv_period_begda LT &lt;lv_increase_date&gt;.
+    CLEAR: lv_curr_value, lv_prev_value.
+    &quot;**********************************************************************
+    &quot;Read Salary (/010) after salary increase
+    DATA(lv_datum) = &lt;lv_increase_date&gt;. &quot; exactly on date of increase
+    LOOP AT it_results REFERENCE INTO lr_results
+                           WHERE evp-fpbeg LE lv_datum
+                             AND evp-fpend GE lv_datum.
+      LOOP AT lr_results-&gt;inter-wpbp REFERENCE INTO lr_wpbp
+                                         WHERE begda LE lv_datum
+                                           AND endda GE lv_datum.
+        LOOP AT lr_results-&gt;inter-rt REFERENCE INTO DATA(lr_rt)
+                                         WHERE lgart EQ is_51av_c-compwtyp
+                                           AND apznr EQ lr_wpbp-&gt;apznr.
+          lv_curr_value = lr_rt-&gt;betpe.
+        ENDLOOP.
+        EXIT.
+      ENDLOOP.
+      IF lv_curr_value IS NOT INITIAL.
+        EXIT.
+      ENDIF.
+    ENDLOOP.
+    &quot;**********************************************************************
+    &quot;Read Salary (/010) which was in period before increase
+    CHECK NOT lv_curr_value IS INITIAL.
+    lv_datum = lr_wpbp-&gt;begda - 1.
+    LOOP AT it_results REFERENCE INTO lr_results
+                           WHERE evp-fpbeg LE lv_datum
+                             AND evp-fpend GE lv_datum
+                             AND ( evp-payty EQ mc_regular
+                              OR   evp-occat EQ mc_leaving ).
+      LOOP AT lr_results-&gt;inter-wpbp REFERENCE INTO lr_wpbp
+                                           WHERE begda LE lv_datum
+                                             AND endda GE lv_datum.
+        LOOP AT lr_results-&gt;inter-rt REFERENCE INTO lr_rt
+                                         WHERE lgart EQ is_51av_c-compwtyp
+                                           AND apznr EQ lr_wpbp-&gt;apznr.
+          lv_prev_value = lr_rt-&gt;betpe.
+        ENDLOOP.
+        EXIT.
+      ENDLOOP.
+    ENDLOOP.
+    CHECK NOT lv_prev_value IS INITIAL.
+    lv_factor = lv_factor * lv_curr_value / lv_prev_value.
+    &quot; Записываем, нам нужно будет потом
+    IF &lt;ls_adjust_factor&gt;-curr_value IS INITIAL.
+      &lt;ls_adjust_factor&gt;-curr_value = lv_curr_value.
+    ENDIF.
+    &lt;ls_adjust_factor&gt;-curr_value_c = lv_curr_value.
+    &lt;ls_adjust_factor&gt;-prev_value   = lv_prev_value.
+  ENDLOOP.
+  &quot;
+  &lt;ls_adjust_factor&gt;-factor = lv_factor.
+  &quot; check if negative adjustment is allowed !
+  IF is_51av_c-adj_sign = &apos;P&apos; AND &lt;ls_adjust_factor&gt;-factor LT 1.
+    &lt;ls_adjust_factor&gt;-factor = lv_factor = 1.
+  ENDIF.
+ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_KZAVE" VERSION="1" LANGU="R" DESCRIPT="Возвращаем значение KZAVE" EXPOSURE="2" STATE="1" EDITORDER="22 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_KZAVE" SCONAME="RT_RESULT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_KZAVE"/>
+   <source>method AVER_GET_KZAVE.
+    RT_RESULT[] = MT_KZAVE[].
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_AVERAGE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="16 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_AVERAGE" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_AVERAGE" SCONAME="RV_RESULT" VERSION="1" LANGU="R" DESCRIPT="Расчет зарплаты: сумма" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MAXBT"/>
+   <source>method AVER_GET_VALUE_AVERAGE.
+    try.
+        RV_RESULT = MS_PAYKZ_RESULT-INTER-AVERAGE[ BEGDA = IV_DATUM ]-BETPE.
+    catch cx_sy_itab_line_not_found.
+        clear RV_RESULT.
+    endtry.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_AVERAGE_COMP" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="20 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_AVERAGE_COMP" SCONAME="IV_QCTYP" VERSION="1" LANGU="R" DESCRIPT="Правило компенсации лимитов времени" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="TIM_QCTYP"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_AVERAGE_COMP" SCONAME="RV_RESULT" VERSION="1" LANGU="R" DESCRIPT="Расчет зарплаты: сумма" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MAXBT"/>
+   <source>method AVER_GET_VALUE_AVERAGE_COMP.
+    DATA: lv_lgart TYPE lgart.
+    CASE iv_qctyp.
+      WHEN &apos;0001&apos;.
+        lv_lgart = &apos;24*&apos;.
+      WHEN &apos;0011&apos;.
+        lv_lgart = &apos;25*&apos;.
+      WHEN OTHERS.
+    ENDCASE.
+    CLEAR rv_result.
+    LOOP AT ms_paykz_result-inter-rt
+      REFERENCE INTO DATA(lo_rt)
+        WHERE lgart CP lv_lgart.
+      rv_result = lo_rt-&gt;betpe.
+    ENDLOOP.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="17 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ" SCONAME="RV_RESULT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="ANZHL"/>
+   <source>method AVER_GET_VALUE_LGARTANZ.
+    CLEAR rv_result.
+    &quot; Находим сплит отсутствия
+    loop at ms_paykz_result-inter-ab into data(ls_ab) where endda ge iv_datum and begda le iv_endda .
+      LOOP AT ms_paykz_result-inter-rt
+        REFERENCE INTO DATA(lo_rt)
+          WHERE abznr = ls_ab-abznr.
+        CHECK lo_rt-&gt;lgart(1) NE &apos;/&apos;
+*          AND lo_rt-&gt;lgart(1) NE &apos;9&apos;
+          .
+        ADD lo_rt-&gt;anzhl TO rv_result.
+        &quot;rv_result = lo_rt-&gt;betrg.
+      ENDLOOP.
+    ENDLOOP.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ_COMP" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="21 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ_COMP" SCONAME="IV_QCTYP" VERSION="1" LANGU="R" DESCRIPT="Правило компенсации лимитов времени" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="TIM_QCTYP"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTANZ_COMP" SCONAME="RV_RESULT" VERSION="1" LANGU="R" DESCRIPT="Расчет зарплаты: сумма" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MAXBT"/>
+   <source>METHOD aver_get_value_lgartanz_comp.
+        DATA: lv_lgart TYPE lgart.
+    CASE iv_qctyp.
+      WHEN &apos;0001&apos;.
+        lv_lgart = &apos;24*&apos;.
+      WHEN &apos;0011&apos;.
+        lv_lgart = &apos;25*&apos;.
+      WHEN OTHERS.
+    ENDCASE.
+    CLEAR rv_result.
+    LOOP AT ms_paykz_result-inter-rt
+      REFERENCE INTO DATA(lo_rt)
+        WHERE lgart cp lv_lgart.
+      rv_result = lo_rt-&gt;anzhl.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="18 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM" SCONAME="RV_RESULT" VERSION="1" LANGU="R" DESCRIPT="Расчет зарплаты: сумма" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MAXBT"/>
+   <source>method AVER_GET_VALUE_LGARTSUM.
+    CLEAR rv_result.
+    &quot; Находим сплит отсутствия
+    loop at ms_paykz_result-inter-ab into data(ls_ab) where endda ge iv_datum and begda le iv_endda .
+      LOOP AT ms_paykz_result-inter-rt
+        REFERENCE INTO DATA(lo_rt)
+          WHERE abznr = ls_ab-abznr.
+        CHECK lo_rt-&gt;lgart(1) NE &apos;/&apos;
+*          AND lo_rt-&gt;lgart(1) NE &apos;9&apos;
+          .
+        ADD lo_rt-&gt;betrg TO rv_result.
+        &quot;rv_result = lo_rt-&gt;betrg.
+      ENDLOOP.
+    ENDLOOP.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM_COMP" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="19 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM_COMP" SCONAME="IV_QCTYP" VERSION="1" LANGU="R" DESCRIPT="Правило компенсации лимитов времени" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="TIM_QCTYP"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_GET_VALUE_LGARTSUM_COMP" SCONAME="RV_RESULT" VERSION="1" LANGU="R" DESCRIPT="Расчет зарплаты: сумма" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MAXBT"/>
+   <source>method AVER_GET_VALUE_LGARTSUM_COMP.
+    DATA: lv_lgart TYPE lgart.
+    CASE iv_qctyp.
+      WHEN &apos;0001&apos;.
+        lv_lgart = &apos;24*&apos;.
+      WHEN &apos;0011&apos;.
+        lv_lgart = &apos;25*&apos;.
+      WHEN OTHERS.
+    ENDCASE.
+    CLEAR rv_result.
+    LOOP AT ms_paykz_result-inter-rt
+      REFERENCE INTO DATA(lo_rt)
+        WHERE lgart CP lv_lgart.
+      rv_result = lo_rt-&gt;betrg.
+    ENDLOOP.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_READ_PAYKZ_RESULT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="13 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_READ_PAYKZ_RESULT" SCONAME="IV_INPER" VERSION="1" LANGU="R" DESCRIPT="В-период расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC261-INPER" PAROPTIONL="X"/>
+   <source>method AVER_READ_PAYKZ_RESULT.
+   data(lv_seqnr) = ME-&gt;cd_evaluation_periods( iv_inper = iv_inper ).
+    &quot; Если не нашли нужнй расчет, выходим
+    if lv_seqnr is initial.
+      return.
+    endif.
+    &quot; ..
+    CALL FUNCTION &apos;PYXX_READ_PAYROLL_RESULT&apos;
+      EXPORTING
+        CLUSTERID                    = MV_RELID
+        EMPLOYEENUMBER               = MV_PERNR
+        SEQUENCENUMBER               = lv_SEQNR
+        CLIENT                       = sy-mandt
+      CHANGING
+        PAYROLL_RESULT               = MS_PAYKZ_RESULT
+      EXCEPTIONS
+        ILLEGAL_ISOCODE_OR_CLUSTERID = 1
+        ERROR_GENERATING_IMPORT      = 2
+        IMPORT_MISMATCH_ERROR        = 3
+        SUBPOOL_DIR_FULL             = 4
+        NO_READ_AUTHORITY            = 5
+        NO_RECORD_FOUND              = 6
+        VERSIONS_DO_NOT_MATCH        = 7
+        OTHERS                       = 8.
+    IF SY-SUBRC NE 0.
+      CLEAR MS_PAYKZ_RESULT.
+    ENDIF.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="12 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN" SCONAME="IV_PERIO" VERSION="1" LANGU="R" DESCRIPT="В-период расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC261-INPER" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="P2001-BEGDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN" SCONAME="IV_ABKRS" VERSION="1" LANGU="R" DESCRIPT="Единица расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="P0001-ABKRS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN" SCONAME="IV_QCTYP" VERSION="1" LANGU="R" DESCRIPT="Правило компенсации лимитов времени" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="TIM_QCTYP" PAROPTIONL="X"/>
+   <source>method AVER_RUN.
+    me-&gt;read_rgdir( ).&quot;Читаем каталог расчета
+
+    me-&gt;aver_read_paykz_result( iv_perio ).&quot;читаем результат
+
+    IF me-&gt;ms_paykz_result IS INITIAL.&quot; если нет расчета за период
+      &quot; Запускаем моделирование расчета
+      me-&gt;aver_run_payroll( iv_perio = iv_perio
+                            iv_abkrs = iv_abkrs ).
+      &quot; Считываем каталог расчета из буфера
+      me-&gt;read_rgdir_from_buffer(  ).
+      &quot; Считываем результат расчета
+      me-&gt;aver_read_paykz_result( iv_perio ).
+    ENDIF.
+    &quot; считываем таблицу средней с результата расчета
+    me-&gt;aver_set_kzaverage(
+      EXPORTING
+        iv_datum = iv_datum
+        iv_qctyp = iv_qctyp &quot; Правило компенсации лимитов времени
+    ).
+    &quot; находим начало и конец перида
+    me-&gt;aver_set_perio_kzave( ).
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN_PAYROLL" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="14 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN_PAYROLL" SCONAME="IV_PERIO" VERSION="1" LANGU="R" DESCRIPT="В-период расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC261-INPER" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_RUN_PAYROLL" SCONAME="IV_ABKRS" VERSION="1" LANGU="R" DESCRIPT="Единица расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="P0001-ABKRS" PAROPTIONL="X"/>
+   <source>method AVER_RUN_PAYROLL.
+    data lt_pernr_tab type standard table of pay_sim_pernr.
+    data lv_client type pcl2-client.
+    data lv_pabrp  type t549q-PABRP.
+    data lv_pabrj  type t549q-PABRJ.
+    &quot;
+    data(lv_datum) = cond DATS(
+                        when IV_PERIO is not initial then |{ IV_PERIO }01|
+                        when MV_BEGDA is not initial then MV_BEGDA
+                        else SY-DATUM ).
+    &quot;
+     data(lv_abkrs) = &apos;KZ&apos;.
+    &quot;
+    lt_pernr_tab = VALUE #( ( pernr = MV_PERNR ) ).
+    lv_PABRP = IV_PERIO+4(2).
+    lv_PABRJ = IV_PERIO+0(4).
+    &quot; Запускаем HKZCALC0
+    CALL FUNCTION &apos;HR_PAYROLL&apos;
+      EXPORTING
+        PAYROLL_AREA      = IV_ABKRS
+        PAYROLL_PERIOD    = lv_PABRP
+        PAYROLL_YEAR      = lv_PABRJ
+        SELECTION_VARIANT = mc_VARIANT
+        PROGRAM_NAME      = mc_pay_prog
+      TABLES
+        EMPLOYEE_NUMBERS  = lt_pernr_tab
+        BUFFER            = MS_BUFFER-TBUFF
+        BUFFER_DIRECTORY  = MS_BUFFER-BUFFER_DIR
+      EXCEPTIONS
+        PROGRAM_NOT_EXIST = 1
+        VARIANT_NOT_EXIST = 2
+        MISSING_PARAMETER = 3
+        OTHERS            = 4.
+    IF sy-subrc NE 0.
+      CASE sy-subrc.
+        WHEN 1.
+        WHEN 2.
+        WHEN 3.
+        WHEN OTHERS.
+          &quot; что то не так
+      ENDCASE.
+      EXIT.
+    ENDIF.
+    &quot;
+    CALL FUNCTION &apos;HR_PCLX_INIT_BUFFER&apos; .
+    &quot; Переносим данные с буфера в кластер
+    CALL FUNCTION &apos;HR_COPY_TBUFF_TO_BUFFER&apos;
+      EXPORTING
+*        database_table    = &apos;PCL2&apos; &quot; Default Value
+        CLUSTERID         = MV_RELID
+      TABLES
+        buffer            = MS_BUFFER-tbuff
+        buffer_directory  = MS_BUFFER-buffer_dir
+      EXCEPTIONS
+        OTHERS            = 0.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_SET_KZAVERAGE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="15 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_SET_KZAVERAGE" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_SET_KZAVERAGE" SCONAME="IV_QCTYP" VERSION="1" LANGU="R" DESCRIPT="Правило компенсации лимитов времени" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="TIM_QCTYP" PAROPTIONL="X"/>
+   <source>method AVER_SET_KZAVERAGE.
+    &quot; Находим сплит отсутсвия
+
+    IF iv_qctyp IS NOT INITIAL.
+*      LOOP AT ms_paykz_result-nat-kzav
+*          REFERENCE INTO DATA(lo_kzave)
+*          WHERE avrule EQ mc_comp_rule.        &quot; Присвоение отсутствия
+*        CHECK NOT lo_kzave-&gt;anzhl IS INITIAL
+*           OR NOT lo_kzave-&gt;betrg IS INITIAL.
+*        APPEND INITIAL LINE TO mt_kzave REFERENCE INTO DATA(lr_kzave).
+*        lr_kzave-&gt;* = CORRESPONDING #( lo_kzave-&gt;* ).
+*      ENDLOOP.
+      DATA(lv_abznr) = &apos;00&apos;.
+    ELSE.
+
+      TRY.
+          lv_abznr  = ms_paykz_result-inter-ab[ begda = iv_datum ]-abznr.
+        CATCH cx_sy_itab_line_not_found.
+          RETURN. &quot; теперь тут нам делать нечего
+      ENDTRY.
+    endif.
+      &quot; пробегаемся по Средней нашего отсутствия
+      LOOP AT ms_paykz_result-nat-kzav
+          REFERENCE INTO DATA(lo_kzave)
+          WHERE abpwt EQ lv_abznr.        &quot; Присвоение отсутствия
+        CHECK NOT lo_kzave-&gt;anzhl IS INITIAL
+           OR NOT lo_kzave-&gt;betrg IS INITIAL.
+        APPEND INITIAL LINE TO mt_kzave REFERENCE INTO DATA(lr_kzave).
+        lr_kzave-&gt;* = CORRESPONDING #( lo_kzave-&gt;* ).
+      ENDLOOP.
+
+
+    &quot;
+    SORT mt_kzave BY begda.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="AVER_SET_PERIO_KZAVE" VERSION="1" LANGU="R" DESCRIPT="Находим дни начальной и конечной даты" EXPOSURE="0" STATE="1" EDITORDER="8 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <source>method AVER_SET_PERIO_KZAVE.
+      loop at MT_KZAVE reference into data(lo_kzav).
+      data(lv_bdatum) = lo_kzav-&gt;begda.
+      data(lv_edatum) = lo_kzav-&gt;endda.
+      at first.
+        MV_KZAV_BEGDA = lv_bdatum.
+      endat.
+      at last.
+        MV_KZAV_ENDDA = lv_edatum.
+      endat.
+    endloop.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="IV_MODIF" VERSION="1" LANGU="R" DESCRIPT="Параметры периода" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PERMO" PARVALUE="MC_MODIF"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="IV_INPER" VERSION="1" LANGU="R" DESCRIPT="В-период расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="IPERI"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="IV_PAYTY" VERSION="1" LANGU="R" DESCRIPT="СпосПлт" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PAYTY" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="IV_PAYID" VERSION="1" LANGU="R" DESCRIPT="Идентификатор расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PAYID" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="IV_DATE" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CD_EVALUATION_PERIODS" SCONAME="RV_SEQNR" VERSION="1" LANGU="R" DESCRIPT="Порядковый номер" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="CDSEQ"/>
+   <source>METHOD cd_evaluation_periods.
+
+  DATA: lt_evp    TYPE hrpy_tt_rgdir,
+        wa_lt_evp LIKE LINE OF lt_evp.
+  DATA lt_rgdir TYPE hrpy_tt_rgdir.
+
+  _check_rgdir( EXPORTING it_rgdir = it_rgdir
+                IMPORTING et_rgdir = lt_rgdir ).
+
+  CHECK lines( lt_rgdir ) &gt; 0.
+
+  CALL FUNCTION &apos;CD_EVALUATION_PERIODS&apos;
+    EXPORTING
+      inper_modif     = iv_modif
+      inper           = iv_inper
+      pay_type        = iv_payty
+      pay_ident       = iv_payid
+    TABLES
+      rgdir           = lt_rgdir
+      evpdir          = lt_evp
+    EXCEPTIONS
+      no_record_found = 1
+      OTHERS          = 2.
+
+  TRY.
+      IF lines( lt_evp ) &gt; 1 AND iv_date IS NOT INITIAL.
+        LOOP AT lt_evp INTO wa_lt_evp WHERE fpbeg &lt;= iv_date AND fpend &gt;= iv_date.
+          rv_seqnr = wa_lt_evp-seqnr.
+        ENDLOOP.
+      ELSE.
+        rv_seqnr = lt_evp[ fpper = iv_inper ]-seqnr.
+      ENDIF.
+    CATCH cx_sy_itab_line_not_found.
+      CLEAR rv_seqnr.
+  ENDTRY.
+
+ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="R" DESCRIPT="CONSTRUCTOR" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_PERNR" VERSION="1" LANGU="R" DESCRIPT="Табельный номер" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PERNR_D"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="2" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="2" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_FPPER" VERSION="1" LANGU="R" DESCRIPT="Общий флаг" CMPTYPE="1" MTDTYPE="2" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="FLAG" PAROPTIONL="X"/>
+   <source>METHOD constructor.
+  super-&gt;constructor( iv_objid  = iv_pernr
+                      iv_otype  = &apos;P&apos;
+                      iv_begda  = iv_begda
+                      iv_endda  = iv_endda ).
+  &quot;
+  mv_relid = read_relid( iv_molga = mc_molga ).
+
+  mv_begda = iv_begda.
+  mv_endda = iv_endda.
+  mv_fpper = iv_fpper.
+  mv_pernr = iv_pernr.
+
+  CALL METHOD me-&gt;read_rgdir
+    EXPORTING
+      iv_read_auth = abap_false
+    IMPORTING
+      et_rgdir     = mt_evp_rgdir.
+
+  mt_full_rgdir[] = mt_evp_rgdir[].
+  mt_rgdir[] = mt_evp_rgdir[].
+
+ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_EVP" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="11 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_EVP" SCONAME="IS_INPER" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYS_INPER_DIRECTORY_ENTRY"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_EVP" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_EVP" SCONAME="OT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>METHOD filter_evp.
+    SORT it_rgdir BY ipend DESCENDING srtza DESCENDING seqnr ASCENDING.
+
+    LOOP AT it_rgdir INTO DATA(ls_rgdir)
+            WHERE void EQ abap_false.
+      IF ls_rgdir-srtza NE &apos;A&apos;.
+        MOVE-CORRESPONDING is_inper TO ls_rgdir.
+      ENDIF.
+      APPEND ls_rgdir TO ot_rgdir.
+    ENDLOOP.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_TWEAKED_EVP" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="24 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_TWEAKED_EVP" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_TWEAKED_EVP" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_TWEAKED_EVP" SCONAME="IS_INPER_DIRECTORY_ENTRY" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYS_INPER_DIRECTORY_ENTRY"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_TWEAKED_EVP" SCONAME="CT_EVP_RELATED" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="FILTER_TWEAKED_EVP" SCONAME="CT_TWEAKED_EVP" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>METHOD filter_tweaked_evp.
+
+  sort ct_evp_related by ipend descending srtza descending seqnr ascending.
+
+    IF mv_fpper EQ abap_true.
+      LOOP AT ct_evp_related INTO DATA(ls_rgdir)
+          WHERE fpend BETWEEN iv_begda AND iv_endda
+            AND void EQ &apos; &apos;
+            and ( payty eq &apos;&apos; and payid eq &apos;&apos; ).
+        IF ls_rgdir-srtza NE &apos;A&apos;.
+          MOVE-CORRESPONDING is_inper_directory_entry TO ls_rgdir.
+        ENDIF.
+        APPEND ls_rgdir TO ct_tweaked_evp.
+      ENDLOOP.
+    ELSE.&quot;in-view
+      LOOP AT ct_evp_related INTO ls_rgdir
+          WHERE void EQ &apos; &apos;.
+        IF ls_rgdir-srtza NE &apos;A&apos;.
+          MOVE-CORRESPONDING is_inper_directory_entry TO ls_rgdir.
+        ENDIF.
+        APPEND ls_rgdir TO ct_tweaked_evp.
+      ENDLOOP.
+    ENDIF.&quot;in-view or for-view
+
+
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_DATE_RANGE_ACTUAL_NV" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_DATE_RANGE_ACTUAL_NV" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_DATE_RANGE_ACTUAL_NV" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_DATE_RANGE_ACTUAL_NV" SCONAME="IV_READ_INPER" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_DATE_RANGE_ACTUAL_NV" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="In RGDIR" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_DATE_RANGE_ACTUAL_NV" SCONAME="ET_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Out RGDIR" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>method READ_DATE_RANGE_ACTUAL_NV.
+  DATA lt_rgdir   TYPE HRPY_TT_RGDIR.
+  DATA lt_rgdir_e TYPE HRPY_TT_RGDIR.
+  DATA lt_evp     TYPE HRPY_TT_RGDIR.
+  DATA lv_inper   TYPE pc261-INPER.
+  &quot;
+  _check_rgdir( exporting it_rgdir = it_rgdir
+                importing et_rgdir = lt_rgdir ).
+  &quot;
+  DATA(lv_begda) = iv_begda.
+  DATA(lv_endda) = iv_endda.
+  _check_dates( changing cv_begda = lv_begda cv_endda = lv_endda ).
+  &quot;
+  if iv_read_inper is initial.
+    &quot; по FPPER
+    CALL FUNCTION &apos;CD_READ_DATE_RANGE_ACTUAL_NV&apos;
+      EXPORTING
+        begda     = lv_begda
+        endda     = lv_endda
+      TABLES
+        rgdir_in  = lt_rgdir
+        rgdir_out = lt_rgdir_e.
+  else.
+    &quot; По INPER
+    data(lv_datum) = lv_begda.
+    while lv_datum &lt; lv_endda.
+      lv_inper = lv_datum(6).
+      &quot; Очищаем
+      refresh lt_evp.
+      &quot; Находим расчеты для этого периода
+      call function &apos;CD_EVALUATION_PERIODS&apos;
+        exporting
+          inper_modif     = mc_permo
+          inper           = lv_inper
+        tables
+          rgdir           = lt_rgdir
+          evpdir          = lt_evp
+        exceptions
+          no_record_found = 1
+          others          = 2.
+      &quot;
+      append lines of lt_evp to lt_rgdir_e.
+      &quot; Следующий период (месяц)
+      lv_datum = cl_reca_date=&gt;set_to_end_of_month( id_date = lv_datum ).
+      add 1 to lv_datum.
+    endwhile.
+  endif.
+
+  &quot; Переносим в выходные данные
+  et_rgdir[] = lt_rgdir_e[].
+  mt_rgdir[] = lt_rgdir_e[].
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RELID" VERSION="1" LANGU="R" DESCRIPT="Идентификатор раздела для кластера в таблицах PCLx" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RELID" SCONAME="IV_MOLGA" VERSION="1" LANGU="R" DESCRIPT="Группировка стран" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MOLGA" PARVALUE="MC_MOLGA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RELID" SCONAME="RV_RELID" VERSION="1" LANGU="R" DESCRIPT="Идентификатор раздела для кластера в таблицах PCLx" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="RELID_PCL"/>
+   <source>method READ_RELID.
+  CLEAR RV_RELID.
+  SELECT SINGLE RELID
+    FROM T500L
+    INTO @DATA(LV_RELID)
+    WHERE MOLGA EQ @IV_MOLGA.
+  CHECK sy-subrc IS INITIAL.
+  RV_RELID = LV_RELID.
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR" SCONAME="IV_READ_AUTH" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ABAP_BOOL" PARVALUE="ABAP_FALSE"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR" SCONAME="ET_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>METHOD read_rgdir.
+    DATA: lt_rgdir  TYPE hrpy_tt_rgdir.
+    &quot;Считываем каталог расчета
+    CALL FUNCTION &apos;CU_READ_RGDIR&apos;
+      EXPORTING
+        persnr                = mv_pernr
+        no_authority_check    = iv_read_auth
+      TABLES
+        in_rgdir              = lt_rgdir
+      EXCEPTIONS
+        no_record_found       = 1
+        import_mismatch_error = 2
+        no_read_authority     = 3
+        OTHERS                = 4.
+
+    IF sy-subrc = 0.
+*      reduce_rgdir(
+*        CHANGING
+*          ct_rgdir = lt_rgdir    &quot; Каталог результатов расчета
+*      ).
+
+      mt_rgdir[] = lt_rgdir[].
+      mt_full_rgdir[] = lt_rgdir[].
+      et_rgdir[] = lt_rgdir[].
+    ENDIF.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR_FROM_BUFFER" VERSION="1" LANGU="R" DESCRIPT="Считывание кластера CU" EXPOSURE="2" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR_FROM_BUFFER" SCONAME="IS_BUFFER" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAY_BUFFER" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR_FROM_BUFFER" SCONAME="ET_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>method READ_RGDIR_FROM_BUFFER.
+    DATA: lt_rgdir  TYPE HRPY_TT_RGDIR.
+    &quot;Считываем каталог расчета
+    CALL FUNCTION &apos;CU_READ_RGDIR&apos;
+      EXPORTING
+        persnr                = mv_pernr
+        buffer                = MS_BUFFER
+*        check_read_authority  = space
+*        imp_client            = lv_client
+      TABLES
+        in_rgdir              = lt_rgdir
+      EXCEPTIONS
+        no_record_found       = 1
+        import_mismatch_error = 2
+        no_read_authority     = 3
+        OTHERS                = 4.
+    IF sy-subrc = 0.
+      mt_rgdir[] = lt_rgdir[].
+      et_rgdir[] = lt_rgdir[].
+    ENDIF.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR_PAYRESULTS" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR_PAYRESULTS" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_RGDIR_PAYRESULTS" SCONAME="ET_RESULTS" VERSION="1" LANGU="R" DESCRIPT="Тип для таблицы результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <source>method READ_RGDIR_PAYRESULTS.
+  DATA lt_rgdir   TYPE HRPY_TT_RGDIR.
+  &quot;
+  _check_rgdir( exporting it_rgdir = it_rgdir
+                importing et_rgdir = lt_rgdir ).
+  &quot;
+  CHECK lines( lt_rgdir[] ) GT 0.
+  CALL FUNCTION &apos;PYXX_READ_RGDIR_PAYRESULTS&apos;
+    EXPORTING
+      clusterid               = mv_relid
+      employeenumber          = mv_pernr
+      read_only_international = abap_false
+    TABLES
+      rgdir                   = lt_rgdir
+      imported_periods        = et_results
+    EXCEPTIONS
+      import_error            = 1
+      OTHERS                  = 2.
+  IF sy-subrc NE 0.
+*Exit if no payroll results found
+*    RETURN.
+  ELSE.
+    mt_results[] = CORRESPONDING #( et_results ).
+  ENDIF.
+*
+*  CALL FUNCTION &apos;CD_EVALUATION_PERIODS&apos;
+*      EXPORTING
+*        INPER_MODIF     = l_permo
+*        INPER           = i_inper
+*      TABLES
+*        RGDIR           = lt_rgdir
+*        EVPDIR          = lt_evp
+*      EXCEPTIONS
+*        NO_RECORD_FOUND = 1
+*        OTHERS          = 2.
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_A" VERSION="1" LANGU="R" DESCRIPT="Read Table T51AV_A" EXPOSURE="0" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_A" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_A" SCONAME="IV_AVRULE" VERSION="1" LANGU="R" DESCRIPT="Правила расчета для средних значений" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="AVRULE"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_A" SCONAME="RS_T51AV_A" VERSION="1" LANGU="R" DESCRIPT="Правила расчета для средних значений" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="T51AV_A"/>
+   <source>method READ_T51AV_A.
+    DATA(lv_begda) = iv_datum.
+    DATA(lv_endda) = iv_datum.
+    _CHECK_DATES( changing cv_begda = lv_begda cv_endda = lv_endda ).
+    &quot;
+    CHECK lv_begda IS NOT INITIAL.
+    &quot;
+    SELECT SINGLE * FROM t51av_a
+      INTO @DATA(ls_t51av_a)
+      WHERE molga  EQ @mc_molga
+        AND avrule EQ @iv_avrule
+        AND begda  LE @lv_begda
+        AND endda  GE @lv_begda.
+    CHECK sy-subrc = 0.
+    rs_t51av_a = CORRESPONDING #( ls_t51av_a ).
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_B" VERSION="1" LANGU="R" DESCRIPT="Read Table T51AV_B" EXPOSURE="0" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_B" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_B" SCONAME="IV_CUMRULE" VERSION="1" LANGU="R" DESCRIPT="Правило кумуляции для основ расчета средних значений" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="CUMRULE" PARVALUE="MC_CUMRULE"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_B" SCONAME="ET_T51AV_B" VERSION="1" LANGU="R" DESCRIPT="Правила кумуляции для основ средних значений" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPAYRU_T_T51AV_B"/>
+   <source>method READ_T51AV_B.
+    DATA(lv_begda) = iv_datum.
+    DATA(lv_endda) = iv_datum.
+    _CHECK_DATES( changing CV_BEGDA = lv_begda cv_endda = lv_endda ).
+    &quot;
+    CHECK lv_begda IS NOT INITIAL.
+    SELECT *
+      INTO TABLE @DATA(lt_t51av_b)
+      FROM T51AV_B
+      WHERE MOLGA EQ @MC_MOLGA       &quot; KZ
+        AND CUMRULE EQ @IV_CUMRULE   &quot; KZ01
+        AND BEGDA LE @lv_begda
+        AND ENDDA GE @lv_begda.
+    CHECK SY-SUBRC = 0.
+    ET_T51AV_B[] = CORRESPONDING #( lt_t51av_b ).
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_C" VERSION="1" LANGU="R" DESCRIPT="Правила адаптации для основ расчета среднего значения" EXPOSURE="0" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_C" SCONAME="IV_ADJRULE" VERSION="1" LANGU="R" DESCRIPT="Правило адаптации для основ расчета средних значений" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ADJRULE" PARVALUE="MC_ADJRULE"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="READ_T51AV_C" SCONAME="ES_T51AV_C" VERSION="1" LANGU="R" DESCRIPT="Table Type for T51AV_B" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="T51AV_C"/>
+   <source>method READ_T51AV_C.
+  SELECT SINGLE *
+    FROM t51av_c INTO @DATA(ls_t51av_c)
+    WHERE molga   EQ @mc_molga
+      AND adjrule EQ @iv_adjrule.
+  CHECK sy-subrc = 0.
+  ES_T51AV_C = CORRESPONDING #( ls_t51av_c ).
+endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="REDUCE_RGDIR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="9 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="REDUCE_RGDIR" SCONAME="CT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="2" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>METHOD reduce_rgdir.
+    DELETE ct_rgdir WHERE
+*      not ( fpbeg between iv_fp_beg and iv_fp_end ) or
+      NOT ( fpend BETWEEN mv_begda AND mv_endda ).
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_EVP" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_EVP" SCONAME="IT_INPER_TAB" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYT_INPER_DIRECTORY"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_EVP" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_EVP" SCONAME="RT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>METHOD ret_evp.
+
+
+    DATA: lt_evp_related_records TYPE hrpy_tt_rgdir,
+          lt_tweaked_evp         TYPE hrpy_tt_rgdir.
+
+    LOOP AT it_inper_tab INTO DATA(ls_inper).
+      REFRESH lt_evp_related_records.
+      DATA(lt_eval_tab) = cl_hr_cd_manager=&gt;eval_periods(
+                      imp_inpty      = ls_inper-inpty
+                      imp_inper      = ls_inper-inper
+                      imp_iperm      = ls_inper-iperm
+                    &quot;  imp_iabkrs     = pnpabkrs[]
+                      imp_bondt      = ls_inper-ipend
+                      imp_inpid      = ls_inper-inpid
+                      imp_rgdir      = it_rgdir
+                      imp_all_of_run = abap_false ).
+      LOOP AT lt_eval_tab ASSIGNING FIELD-SYMBOL(&lt;eval_wa&gt;).
+        APPEND LINES OF &lt;eval_wa&gt;-evp TO lt_evp_related_records.
+      ENDLOOP.
+      filter_evp(
+        EXPORTING
+          is_inper = ls_inper
+        CHANGING
+          it_rgdir = lt_evp_related_records    &quot; Каталог результатов расчета
+          ot_rgdir = lt_tweaked_evp    &quot; Каталог результатов расчета
+      ).
+
+
+
+    ENDLOOP.
+    rt_rgdir[] = lt_tweaked_evp[].
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_INPER_DIR" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_INPER_DIR" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="В-период расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_INPER_DIR" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_INPER_DIR" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_INPER_DIR" SCONAME="RT_INPER_TAB" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_INPER_DIRECTORY"/>
+   <source>METHOD ret_inper_dir.
+
+    DATA: ls_inper_directory TYPE mtys_inper_directory_entry.
+
+    LOOP AT it_rgdir INTO DATA(ls_rgdir)
+          WHERE ipend BETWEEN iv_begda AND iv_endda
+            AND void EQ &apos;&apos;.
+      MOVE-CORRESPONDING ls_rgdir TO ls_inper_directory.
+      COLLECT ls_inper_directory INTO rt_inper_tab.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_RGDIR" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="10 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_RGDIR" SCONAME="IV_INPER" VERSION="1" LANGU="R" DESCRIPT="В-период расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="IPERI"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_RGDIR" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_RGDIR" SCONAME="RT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>METHOD ret_rgdir.
+  DATA: lv_begda TYPE d,
+        lv_endda TYPE d.
+
+  lv_begda = |{ iv_inper }01|.
+
+  CALL FUNCTION &apos;HR_JP_MONTH_BEGIN_END_DATE&apos;
+    EXPORTING
+      iv_date             = lv_begda
+    IMPORTING
+      ev_month_begin_date = lv_begda
+      ev_month_end_date   = lv_endda.
+
+
+&quot;  IF mv_fpper EQ abap_true.
+    DATA(lt_rgdir) = mt_full_rgdir[].
+    DELETE lt_rgdir WHERE
+*      not ( fpbeg between iv_fp_beg and iv_fp_end ) or
+     NOT ( fpend BETWEEN lv_begda AND lv_endda ).
+
+    LOOP AT lt_rgdir INTO DATA(ls_rgdir)
+          WHERE ipend BETWEEN lv_begda AND lv_endda
+            AND void EQ  &apos; &apos;.
+      COLLECT ls_rgdir INTO rt_rgdir.
+    ENDLOOP.
+
+ &quot; ELSE.
+
+*    DATA(lt_inper) = ret_inper_dir(
+*                       iv_begda     = lv_begda
+*                       iv_endda     = lv_endda
+*                       it_rgdir     = it_rgdir
+*                   ).
+*
+*    rt_rgdir = ret_evp(
+*               it_inper_tab = lt_inper
+*               it_rgdir     = it_rgdir
+*           ).
+*
+*  ENDIF.
+
+ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_TWEAKED_EVP" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="23 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_TWEAKED_EVP" SCONAME="IV_INPER" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="IPERI"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="RET_TWEAKED_EVP" SCONAME="RT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>method ret_tweaked_evp.
+
+    data: lv_begda               type d,
+          lv_endda               type d,
+          lt_filtered_rgdir      type mtyt_inper_directory,
+          lt_tweaked_evp         type hrpy_tt_rgdir,
+          ls_filtered_rgdir      type mtys_inper_directory_entry,
+          lt_evp_related_records type hrpy_tt_rgdir.
+
+    lv_begda = |{ iv_inper }01|.
+
+    call function &apos;HR_JP_MONTH_BEGIN_END_DATE&apos;
+      exporting
+        iv_date             = lv_begda
+      importing
+        ev_month_begin_date = lv_begda
+        ev_month_end_date   = lv_endda.
+
+    data(lt_rgdir) = mt_evp_rgdir[].
+
+
+    data(lv_beg_fper) = lv_begda.
+    data(lv_end_fper) = lv_endda.
+
+    if mv_fpper eq abap_true.
+      lv_end_fper = &apos;99991231&apos;.
+    else.
+     &quot; lv_beg_fper = &apos;18000101&apos;.
+    endif.
+
+    if mv_fpper eq abap_true.
+      delete lt_rgdir where
+       not ( fpend between lv_begda and lv_endda ).
+    endif.
+
+
+    loop at lt_rgdir into data(ls_rgdir)
+          where ipend between lv_beg_fper and lv_end_fper
+            and void eq  &apos; &apos;
+            and payty eq &apos;&apos;
+            and payid eq &apos;&apos;.
+      move-corresponding ls_rgdir to ls_filtered_rgdir.
+      collect ls_filtered_rgdir into lt_filtered_rgdir.
+    endloop.
+
+
+    loop at lt_filtered_rgdir into data(ls_inper_directory_entry).
+      refresh lt_evp_related_records.
+      data(lt_eval_tab) = cl_hr_cd_manager=&gt;eval_periods(
+                        imp_inpty      = ls_inper_directory_entry-inpty
+                        imp_inper      = ls_inper_directory_entry-inper
+                        imp_iperm      = ls_inper_directory_entry-iperm
+                        imp_bondt      = ls_inper_directory_entry-ipend
+                        imp_inpid      = ls_inper_directory_entry-inpid
+                        imp_rgdir      = lt_rgdir
+                        imp_all_of_run = &apos; &apos; ).
+
+      loop at lt_eval_tab assigning field-symbol(&lt;fs_eval_wa&gt;).
+        append lines of &lt;fs_eval_wa&gt;-evp to lt_evp_related_records.
+      endloop.
+      if sy-subrc eq 0.
+
+        call method me-&gt;filter_tweaked_evp
+          exporting
+            iv_begda                 = lv_begda
+            iv_endda                 = lv_endda
+            is_inper_directory_entry = ls_inper_directory_entry
+          changing
+            ct_evp_related           = lt_evp_related_records
+            ct_tweaked_evp           = lt_tweaked_evp.
+
+      endif.
+    endloop.
+
+    rt_rgdir = lt_tweaked_evp.
+
+
+
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="SET_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Возврящает таблицу RGDIR" EXPOSURE="2" STATE="1" EDITORDER="8 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="SET_RGDIR" SCONAME="RT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>method SET_RGDIR.
+    rt_rgdir[] = mt_rgdir[].
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="_CHECK_RGDIR" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="_CHECK_RGDIR" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_PERNR_NEW" CMPNAME="_CHECK_RGDIR" SCONAME="ET_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="1" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <source>method _CHECK_RGDIR.
+  IF lines( it_rgdir[] ) GT 0.
+    et_rgdir[] = CORRESPONDING #( IT_RGDIR ).
+  ELSEIF lines( mt_rgdir[] ) GT 0.
+    et_rgdir[] = CORRESPONDING #( MT_RGDIR ).
+  ENDIF.
+endmethod.</source>
+  </method>
+ </CLAS>
+ <CLAS CLSNAME="ZCL_HRPY_WCODE_NEW" VERSION="1" LANGU="R" DESCRIPT="Код вида оплаты" CATEGORY="00" EXPOSURE="2" STATE="1" RELEASE="0" CLSCCINCL="X" FIXPT="X" UNICODE="X" CLSBCCAT="00" DURATION_TYPE="0 " RISK_LEVEL="0 " ZSAPLINK_PLUGIN_MAJOR_VERSION="0 " ZSAPLINK_PLUGIN_MINOR_VERSION="1 " ZSAPLINK_PLUGIN_BUILD_VERSION="0 " ZSAPLINK_PLUGIN_INFO1="ZSAPLINK_CLASS is part of the main ZSAPLINK project --&gt; This plugin found there instead of ZSAPLINK_PLUGINS projects" ZSAPLINK_PLUGIN_INFO2="SAPLINK homepage: https://www.assembla.com/spaces/saplink/wiki" ZSAPLINK_PLUGIN_INFO3="Download from https://www.assembla.com/code/saplink/subversion/nodes" ZSAPLINK_PLUGIN_INFO4="and navigate to:  trunk -&gt; core -&gt; ZSAPLINK -&gt; CLAS -&gt; ZSAPLINK_CLASS.slnk">
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_LGART" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="1 " TYPTYPE="4" SRCROW1="8 " SRCCOLUMN1="4 " SRCROW2="16 " SRCCOLUMN2="22 " TYPESRC_LENG="0 " TYPESRC="BEGIN OF mtys_lgart,
+        lgart       TYPE lgart,
+        lgtxt       TYPE lgtxt,
+        kztxt       TYPE pkz_wname,
+        inver       TYPE hrpaykz_inver,
+        clcfd       TYPE hrpaykz_clcfd,
+        days_lgart  TYPE lgart,
+        hours_lgart TYPE lgart,
+      END OF mtys_lgart
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_LGART_SUM" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="2 " TYPTYPE="4" SRCROW1="18 " SRCCOLUMN1="4 " SRCROW2="53 " SRCCOLUMN2="26 " TYPESRC_LENG="0 " TYPESRC="BEGIN OF mtys_lgart_sum,
+        perio       TYPE pkz_wname,
+        inper       TYPE iperi,
+        fpper       TYPE faper,
+        lgart       TYPE lgart,
+        zlsch       TYPE dzlsch,
+        btznr       TYPE btznr,
+        emftx       TYPE text50,
+        iban        TYPE char34,
+        dtadt       TYPE d,
+        bankl       TYPE bankl,
+        banks       TYPE banks,
+        bankn       TYPE p33_vendor_bank_acct,
+        BKORT       TYPE ORT01,
+        bkplz       TYPE PSTLZ,
+        STRAS       TYPE STRAS,
+        lgtxt       TYPE pkz_wname,
+        kztxt       TYPE pkz_wname,
+        inver       TYPE hrpaykz_inver,
+        clcfd       TYPE hrpaykz_clcfd,
+        v0typ	      TYPE v0typ,
+        v0znr       TYPE v0znr,
+        crdid       type HRPAY00_SEPA_CRDID,
+        value       TYPE maxbt,
+        value_days  TYPE maxbt,
+        value_hours TYPE maxbt,
+        value_rt    TYPE maxbt,
+        value_post  TYPE maxbt,
+        value_rate  TYPE maxbt,
+        grnum       TYPE p33_grnum,
+        schkz       TYPE schkn,
+        ksoll       TYPE ktsol,
+        asoll       TYPE atsol,
+        ssoll       TYPE ssoll,
+        apznr       TYPE apznr,
+      END OF mtys_lgart_sum
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_SALDO" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="3 " TYPTYPE="4" SRCROW1="55 " SRCCOLUMN1="4 " SRCROW2="58 " SRCCOLUMN2="22 " TYPESRC_LENG="0 " TYPESRC="BEGIN OF mtys_saldo,
+        name TYPE stringval,
+        summ TYPE maxbt,
+      END OF mtys_saldo
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_WC_LGART" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="4 " TYPTYPE="4" SRCROW1="60 " SRCCOLUMN1="4 " SRCROW2="63 " SRCCOLUMN2="31 " TYPESRC_LENG="0 " TYPESRC='BEGIN OF mtys_wc_lgart,
+        wcode TYPE pkz_wcode.   &quot; Код вида оплаты
+        INCLUDE TYPE mtys_lgart.
+    TYPES : END OF mtys_wc_lgart
+'/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_LGART_SUM" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " TYPTYPE="4" SRCROW1="65 " SRCCOLUMN1="4 " SRCROW2="65 " SRCCOLUMN2="223 " TYPESRC_LENG="0 " TYPESRC="mtyt_lgart_sum TYPE TABLE OF mtys_lgart_sum WITH KEY perio fpper inper lgart lgtxt kztxt inver clcfd btznr bankn bankl BKORT zlsch banks BKPLZ STRAS emftx iban dtadt v0typ  v0znr crdid grnum schkz ksoll asoll ssoll apznr
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_WC_LGART_SUM" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="6 " TYPTYPE="4" SRCROW1="67 " SRCCOLUMN1="4 " SRCROW2="71 " SRCCOLUMN2="29 " TYPESRC_LENG="0 " TYPESRC='BEGIN OF mtys_wc_lgart_sum,
+        wcode   TYPE pkz_wcode,   &quot; Код вида оплаты
+        name    TYPE pkz_wname,
+        t_lgart TYPE mtyt_lgart_sum,
+      END OF mtys_wc_lgart_sum
+'/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_WC_LGART_SUM_PER" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="7 " TYPTYPE="4" SRCROW1="73 " SRCCOLUMN1="4 " SRCROW2="77 " SRCCOLUMN2="33 " TYPESRC_LENG="0 " TYPESRC='BEGIN OF mtys_wc_lgart_sum_per,
+        inper   TYPE inper,
+        wcode   TYPE pkz_wcode,   &quot; Код вида оплаты
+        t_lgart TYPE mtyt_lgart_sum,
+      END OF mtys_wc_lgart_sum_per
+'/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_LGART" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="8 " TYPTYPE="4" SRCROW1="79 " SRCCOLUMN1="4 " SRCROW2="79 " SRCCOLUMN2="71 " TYPESRC_LENG="0 " TYPESRC="mtyt_lgart TYPE SORTED TABLE OF mtys_lgart WITH NON-UNIQUE KEY lgart
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_WC_LGART_SUM" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="9 " TYPTYPE="4" SRCROW1="81 " SRCCOLUMN1="4 " SRCROW2="81 " SRCCOLUMN2="67 " TYPESRC_LENG="0 " TYPESRC="mtyt_wc_lgart_sum TYPE TABLE OF mtys_wc_lgart_sum WITH KEY wcode
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYS_WCODE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="10 " TYPTYPE="4" SRCROW1="83 " SRCCOLUMN1="4 " SRCROW2="88 " SRCCOLUMN2="22 " TYPESRC_LENG="0 " TYPESRC='BEGIN OF mtys_wcode,
+        wcode   TYPE pkz_wcode,   &quot; Код вида оплаты
+        wcsrc   TYPE pkz_wcsrc,   &quot; Источник данных для кода оплаты
+        name    TYPE pkz_wname,   &quot; Наименование кода вида оплаты ( T77PAYKZN1 )
+        t_lgart TYPE mtyt_lgart,  &quot;
+      END OF mtys_wcode
+'/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_WCODE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="11 " TYPTYPE="4" SRCROW1="90 " SRCCOLUMN1="4 " SRCROW2="90 " SRCCOLUMN2="71 " TYPESRC_LENG="0 " TYPESRC="mtyt_wcode TYPE SORTED TABLE OF mtys_wcode WITH NON-UNIQUE KEY wcode
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_WC_LGART" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="12 " TYPTYPE="4" SRCROW1="92 " SRCCOLUMN1="4 " SRCROW2="92 " SRCCOLUMN2="85 " TYPESRC_LENG="0 " TYPESRC="mtyt_wc_lgart TYPE STANDARD TABLE OF mtys_wc_lgart WITH NON-UNIQUE KEY wcode lgart
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_R_WCODE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="13 " TYPTYPE="4" SRCROW1="94 " SRCCOLUMN1="4 " SRCROW2="94 " SRCCOLUMN2="39 " TYPESRC_LENG="0 " TYPESRC="mtyt_r_wcode TYPE RANGE OF pkz_wcode
+"/>
+  <types CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MTYT_R_LGART" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="14 " TYPTYPE="4" SRCROW1="96 " SRCCOLUMN1="4 " SRCROW2="96 " SRCCOLUMN2="35 " TYPESRC_LENG="0 " TYPESRC="mtyt_r_lgart TYPE RANGE OF lgart
+"/>
+  <localImplementation>*&quot;* use this source file for the definition and implementation of
+*&quot;* local helper classes, interface definitions and type
+*&quot;* declarations</localImplementation>
+  <localTypes>*&quot;* use this source file for any type of declarations (class
+*&quot;* definitions, interfaces or type declarations) you need for
+*&quot;* components in the private section</localTypes>
+  <localMacros>*&quot;* use this source file for any macro definitions you need
+*&quot;* in the implementation part of the class</localMacros>
+  <textPool>
+   <language SPRAS="R">
+    <textElement ID="I" KEY="R01" ENTRY="Возврат" LENGTH="17 "/>
+   </language>
+  </textPool>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_BASIC_GROUP" VERSION="1" LANGU="R" DESCRIPT="Группа видов оплаты" EXPOSURE="0" STATE="1" EDITORDER="8 " ATTDECLTYP="2" ATTVALUE="&apos;BASC&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="WGGRP" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_MOLGA" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="3 " ATTDECLTYP="2" ATTVALUE="ZCL_HRPY_PERNR=&gt;MC_MOLGA" ATTEXPVIRT="0" TYPTYPE="1" TYPE="MOLGA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_OPT_EQ" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="2 " ATTDECLTYP="2" ATTVALUE="&apos;EQ&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="CHAR2" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_SIGN_I" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="1 " ATTDECLTYP="2" ATTVALUE="&apos;I&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="CHAR1" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_WCSRC_BT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="2 " ATTDECLTYP="2" ATTVALUE="&apos;B&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PKZ_WCSRC" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_WCSRC_RT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="1 " ATTDECLTYP="2" ATTVALUE="&apos;R&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PKZ_WCSRC" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_WCSRC_RTA" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="3 " ATTDECLTYP="2" ATTVALUE="&apos;A&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PKZ_WCSRC" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_WCTAB_BT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " ATTDECLTYP="2" ATTVALUE="&apos;BT&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PKZ_WCSRC" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_WCTAB_RT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="4 " ATTDECLTYP="2" ATTVALUE="&apos;RT&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PKZ_WCSRC" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MC_WCTAB_RTA" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="6 " ATTDECLTYP="2" ATTVALUE="&apos;RT&apos;" ATTEXPVIRT="0" TYPTYPE="1" TYPE="PKZ_WCSRC" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MT_BASIC" VERSION="1" LANGU="R" DESCRIPT="Wage Type Range" EXPOSURE="2" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPAY00_T_LGART_RANGE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MT_T511" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="9 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="4" SRCROW1="12 " SRCCOLUMN1="4 " SRCROW2="12 " SRCCOLUMN2="55 " TYPESRC_LENG="53 " TYPESRC="MT_T511 TYPE standard TABLE OF t511 WITH DEFAULT KEY
+"/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MT_T51AV_P" VERSION="1" LANGU="R" DESCRIPT="Table Type for T51AV_P" EXPOSURE="2" STATE="1" EDITORDER="9 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="HRPAYRU_T_T51AV_P" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MT_WCODE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="8 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="MTYT_WCODE" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MT_WC_LGART" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="4 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="MTYT_WC_LGART" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MT_WC_LGART_SUM" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="5 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" EXPOSURE="0" STATE="1" EDITORDER="6 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="BEGDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <attribute CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="MV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" EXPOSURE="0" STATE="1" EDITORDER="7 " ATTDECLTYP="0" ATTEXPVIRT="0" TYPTYPE="1" TYPE="ENDDA" SRCROW1="0 " SRCCOLUMN1="0 " SRCROW2="0 " SRCCOLUMN2="0 " TYPESRC_LENG="0 "/>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="CONSTRUCTOR" VERSION="1" LANGU="R" DESCRIPT="Конструктор" EXPOSURE="2" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="2" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IT_R_WCODE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="2" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYT_R_WCODE" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_PROGNAME" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="2" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="SYST_CPROG" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="2" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="CONSTRUCTOR" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="2" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <source>METHOD constructor.
+
+    DATA lv_progname TYPE progname.
+    mv_begda = iv_begda.
+    mv_endda = iv_endda.
+
+IF mt_t511 IS INITIAL.
+SELECT * INTO TABLE @mt_t511 FROM t511 WHERE molga EQ @mc_molga AND endda &gt;= @mv_begda AND begda &lt;= @mv_begda.
+ENDIF.
+
+    IF iv_begda IS INITIAL AND iv_endda IS INITIAL.
+      CALL FUNCTION &apos;HR_JP_MONTH_BEGIN_END_DATE&apos;
+        EXPORTING
+          iv_date             = sy-datum
+        IMPORTING
+          ev_month_begin_date = mv_begda
+          ev_month_end_date   = mv_endda.
+
+    ENDIF.
+
+    lv_progname = iv_progname.
+
+    &quot; Set value MT_WCODE
+    me-&gt;set_wcode_table( it_r_wcode = it_r_wcode iv_progname = lv_progname ).
+
+    DATA(lo_group) = cl_hrpayru_wage_groups=&gt;get_instance(
+                        iv_molga        = mc_molga
+                        iv_force_create = abap_false
+                   ).
+    mt_basic = lo_group-&gt;get_lgarts_in_group( iv_wggrp = mc_basic_group ).
+
+    SELECT * INTO TABLE mt_t51av_p FROM t51av_p WHERE molga EQ mc_molga
+                                                  AND endda GE mv_begda
+                                                  AND begda LE mv_endda.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="GET_LGART_WCODE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="17 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="GET_LGART_WCODE" SCONAME="IV_WCODE" VERSION="1" LANGU="R" DESCRIPT="Код вида оплаты" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PKZ_WCODE"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="GET_LGART_WCODE" SCONAME="IV_DATUM" VERSION="1" LANGU="R" DESCRIPT="Поле типа DATS" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="GET_LGART_WCODE" SCONAME="RT_R_LGART" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_R_LGART"/>
+   <source>method GET_LGART_WCODE.
+    data(lv_datum) = cond DATS( when iv_datum is not initial then IV_DATUM
+                                else sy-datum ).
+    &quot;
+    select &apos;I&apos; AS sign,
+        &apos;EQ&apos; AS OPTION,
+        LGART as low
+      from T77PAYKZN2
+      into corresponding fields of table @RT_R_LGART
+      where WCODE EQ @IV_WCODE
+        and begda LE @lv_datum
+        and endda GE @lv_datum .
+    if sy-subrc &lt;&gt; 0.
+      refresh RT_R_LGART.
+    endif.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AB_PERIO" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="15 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AB_PERIO" SCONAME="IS_AB" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC20I"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AB_PERIO" SCONAME="RV_PERIO" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRINGVAL"/>
+   <source>METHOD ret_ab_perio.
+    DATA: lv_fcmnr  TYPE fcmnr,
+          lv_fcktx  TYPE fcktx,
+          lv_fcltx  TYPE fcltx,
+          lv_beg    TYPE i,
+          lv_end    TYPE i,
+          lt_months TYPE TABLE OF t247.
+
+    lv_fcmnr = is_ab-endda+4(2).
+
+    CALL FUNCTION &apos;MONTH_NAMES_GET&apos;
+      EXPORTING
+        language    = sy-langu
+      TABLES
+        month_names = lt_months.
+
+    READ TABLE lt_months INTO DATA(ls_month) WITH KEY mnr = lv_fcmnr.
+
+    CHECK sy-subrc = 0.
+
+    TRANSLATE ls_month-ktx TO LOWER CASE.
+    TRANSLATE ls_month-ktx(1) TO UPPER CASE.
+
+
+    lv_beg = is_ab-begda+6(2).
+    lv_end = is_ab-endda+6(2).
+
+    IF is_ab-begda NE is_ab-endda.
+      rv_perio = |{ lv_beg }-{ lv_end } { ls_month-ktx } { is_ab-endda+2(2) }|.
+    ELSE.
+      rv_perio = |{ lv_beg } { ls_month-ktx } { is_ab-endda+2(2) }|.
+    ENDIF.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AMOUNT_OUT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="13 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AMOUNT_OUT" SCONAME="IV_AMOUNT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MAXBT"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AMOUNT_OUT" SCONAME="IV_CURRENCY" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="WAERS" PARVALUE="&apos;KZT&apos;"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_AMOUNT_OUT" SCONAME="RV_OUT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRINGVAL"/>
+   <source>METHOD ret_amount_out.
+
+    DATA lv_out TYPE text40.
+    CALL FUNCTION &apos;HRCM_AMOUNT_TO_STRING_CONVERT&apos;
+      EXPORTING
+        betrg                   = iv_amount
+        waers                   = iv_currency
+        new_decimal_separator   = &apos;,&apos;
+        new_thousands_separator = &apos;*&apos;
+      IMPORTING
+        string                  = lv_out.
+
+    DO.
+      REPLACE &apos;*&apos; WITH space INTO   lv_out.
+      IF sy-subrc &lt;&gt; 0.
+        EXIT.
+      ENDIF.
+    ENDDO.
+
+    &quot;REPLACE ALL OCCURRENCES OF &apos;*&apos; IN lv_out WITH space.
+    CONDENSE lv_out.
+    rv_out = lv_out.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_BETPE" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_BETPE" SCONAME="IS_RT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC207"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_BETPE" SCONAME="IT_RT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAY99_RT"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_BETPE" SCONAME="IT_511" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="T511_TAB" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_BETPE" SCONAME="RV_BETPE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="BETPE"/>
+   <source>METHOD ret_betpe.
+
+    DATA: lv_find_lgart TYPE lgart.
+
+    DATA(lt_511) = it_511[].
+    IF lines( lt_511 ) = 0.
+      SELECT * INTO TABLE lt_511 FROM t511 WHERE lgart EQ is_rt-lgart
+                                             AND molga EQ mc_molga.
+    ENDIF.
+
+    READ TABLE lt_511 INTO DATA(ls_511) WITH KEY lgart = is_rt-lgart.
+    IF sy-subrc = 0.
+      CASE ls_511-modna.
+        WHEN &apos;&apos;.
+          rv_betpe = is_rt-betpe.
+        WHEN &apos;CONST&apos;.
+        WHEN OTHERS.
+          LOOP AT it_rt INTO DATA(ls_rt) WHERE apznr EQ is_rt-apznr
+                                           AND lgart IN mt_basic.
+            IF ls_rt-betpe IS NOT INITIAL.
+              rv_betpe = ls_rt-betpe.
+            ELSE.
+              READ TABLE it_rt INTO DATA(ls_rt_004) WITH KEY apznr = ls_rt-apznr
+                                                             lgart = &apos;/004&apos;.
+
+              IF sy-subrc = 0.
+                rv_betpe = ls_rt_004-betpe.
+              ENDIF.
+
+            ENDIF.
+          ENDLOOP.
+      ENDCASE.
+
+    ENDIF.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_CORR_AB" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="12 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_CORR_AB" SCONAME="IT_AB" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAY99_AB"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_CORR_AB" SCONAME="RT_AB" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="HRPAY99_AB"/>
+   <source>METHOD ret_corr_ab.
+
+
+    DATA lv_docnr TYPE ptm_docnr.
+    DATA lv_move(1).
+    DATA tm_ab TYPE hrpay99_ab.
+    DATA(lt_ab) = it_ab[].
+    CLEAR lv_docnr.
+    SORT lt_ab BY endda DESCENDING.
+    CLEAR lv_move.
+
+    DATA: lv_mind TYPE begda,
+          lv_maxd TYPE begda.
+
+    LOOP AT lt_ab INTO DATA(ls_ab).
+      IF ls_ab-begda+4(2) NE ls_ab-endda+4(2).
+        CALL FUNCTION &apos;HR_JP_MONTH_BEGIN_END_DATE&apos;
+          EXPORTING
+            iv_date             = ls_ab-endda
+          IMPORTING
+            ev_month_begin_date = ls_ab-begda.
+        lv_move = &apos;X&apos;.
+      ELSE.
+        IF lv_docnr EQ ls_ab-docnr AND lv_move = &apos;X&apos;.
+          CALL FUNCTION &apos;HR_JP_MONTH_BEGIN_END_DATE&apos;
+            EXPORTING
+              iv_date           = ls_ab-begda
+            IMPORTING
+              ev_month_end_date = ls_ab-endda.
+          CLEAR lv_move.
+        ENDIF.
+      ENDIF.
+      lv_docnr = ls_ab-docnr.
+      APPEND ls_ab TO rt_ab.
+    ENDLOOP.
+
+
+    SORT rt_ab BY endda ASCENDING.
+    tm_ab[] = rt_ab[].
+
+    LOOP AT rt_ab ASSIGNING FIELD-SYMBOL(&lt;fs_ab&gt;).
+      lv_mind = &lt;fs_ab&gt;-begda.
+      lv_maxd = &lt;fs_ab&gt;-endda.
+      LOOP AT tm_ab INTO ls_ab WHERE docnr EQ &lt;fs_ab&gt;-docnr
+                                 AND begda+4(2) EQ &lt;fs_ab&gt;-begda+4(2)
+                                 AND endda+4(2) EQ &lt;fs_ab&gt;-endda+4(2).
+        IF ls_ab-begda LE lv_mind.
+          lv_mind = ls_ab-begda.
+        ENDIF.
+        IF ls_ab-endda GE lv_maxd.
+          lv_maxd = ls_ab-endda.
+        ENDIF.
+      ENDLOOP.
+      &lt;fs_ab&gt;-begda = lv_mind.
+      &lt;fs_ab&gt;-endda = lv_maxd.
+    ENDLOOP.
+
+
+
+*    LOOP AT it_ab INTO DATA(ls_ab).
+*      APPEND INITIAL LINE TO rt_ab ASSIGNING FIELD-SYMBOL(&lt;fs_ab&gt;).
+*      &lt;fs_ab&gt; = ls_ab.
+*      &lt;fs_ab&gt;-begda = ls_ab-obegd.
+*      &lt;fs_ab&gt;-endda = ls_ab-oendd.
+*      IF ls_ab-begda+4(2) NE ls_ab-endda+4(2).
+*
+*      ENDIF.
+*    ENDLOOP.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LEGAL_CODE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="18 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LEGAL_CODE" SCONAME="IT_LGART" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYT_LGART_SUM"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LEGAL_CODE" SCONAME="IV_PERNR" VERSION="1" LANGU="R" DESCRIPT="Табельный номер" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PERNR_D"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LEGAL_CODE" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" DESCRIPT="Начало срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LEGAL_CODE" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" DESCRIPT="Конец срока действия" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LEGAL_CODE" SCONAME="RV_CODE" VERSION="1" LANGU="R" DESCRIPT="Строка" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRINGVAL"/>
+   <source>method ret_legal_code.
+     loop at it_lgart into data(ls_lgart) where lgart eq &apos;5021&apos; or lgart eq &apos;5031&apos;.
+       rv_code = &apos;341-1-18-2&apos;.
+    endloop.
+    check rv_code is initial.
+    loop at it_lgart into ls_lgart where lgart eq &apos;5051&apos; or lgart eq &apos;5061&apos;.
+      rv_code = &apos;341-1-18-3&apos;.
+    endloop.
+    check rv_code is initial.
+     loop at it_lgart into ls_lgart where lgart eq &apos;5121&apos; or lgart eq &apos;5125&apos; or lgart eq &apos;9125&apos;.
+       rv_code = &apos;341-1-23&apos;.
+    endloop.
+    check rv_code is initial.
+    loop at it_lgart into ls_lgart where lgart eq &apos;/3M2&apos;.
+       rv_code = &apos;341-1-9&apos;.
+    endloop.
+    check rv_code is initial.
+    data lt_p9203 TYPE TABLE OF p9203.
+
+    call function &apos;HR_READ_INFOTYPE&apos;
+      exporting
+        pernr                 = iv_pernr
+        infty                 = &apos;9203&apos;
+        BEGDA                 = iv_begda
+        ENDDA                 = iv_endda
+      tables
+        infty_tab             = lt_p9203
+     EXCEPTIONS
+       INFTY_NOT_FOUND       = 1
+       INVALID_INPUT         = 2
+       OTHERS                = 3
+              .
+
+    read TABLE lt_p9203 TRANSPORTING NO FIELDS with KEY zsubty = &apos;3&apos;.
+    if sy-subrc eq 0.
+      rv_code = &apos;341-1-9&apos;.
+    endif.
+
+
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LGART_TABLE" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="4 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LGART_TABLE" SCONAME="IV_WCODE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PKZ_WCODE"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LGART_TABLE" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LGART_TABLE" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LGART_TABLE" SCONAME="RT_LGART" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_LGART"/>
+   <source>METHOD ret_lgart_table.
+    &quot; Clear
+    REFRESH rt_lgart.
+    &quot; Set MT_WC_LGART
+    IF mt_wc_lgart[] IS INITIAL.
+      &quot;me-&gt;SEL_TB_LGART( value MTYT_R_WCODE( ( sign = MC_SIGN_I option = MC_OPT_EQ low = IV_WCODE ) ) ).
+      me-&gt;sel_tb_lgart(
+        EXPORTING
+          it_r_wcode = VALUE mtyt_r_wcode( ( sign = mc_sign_i option = mc_opt_eq low = iv_wcode ) )
+           iv_begda   = iv_begda &quot; Поле типа DATS
+           iv_endda   = iv_endda &quot; Поле типа DATS
+      ).
+    ENDIF.
+    &quot; ...
+    READ TABLE mt_wc_lgart
+      TRANSPORTING NO FIELDS
+      WITH KEY wcode = iv_wcode.
+    IF sy-subrc = 0.
+      DATA(lv_index) = sy-index.
+    ELSE.
+      RETURN.
+    ENDIF.
+    &quot; Перекидываем в выходную таблицу
+    LOOP AT mt_wc_lgart REFERENCE INTO DATA(lr_wlgart) WHERE wcode = iv_wcode .
+*    LOOP AT mt_wc_lgart REFERENCE INTO DATA(lr_wlgart) FROM sy-index WHERE wcode = iv_wcode .
+      DATA(ls_lgart) = CORRESPONDING mtys_lgart( lr_wlgart-&gt;* ).
+      APPEND ls_lgart TO rt_lgart.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LIFNR_NAME" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="11 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LIFNR_NAME" SCONAME="IV_LIFNR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="LIFNR"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_LIFNR_NAME" SCONAME="RV_NAME" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRINGVAL"/>
+   <source>METHOD ret_lifnr_name.
+    SELECT SINGLE * INTO @DATA(ls_lfa1) FROM lfa1 WHERE lifnr EQ @iv_lifnr.
+    CHECK sy-subrc = 0.
+
+    SELECT SINGLE * INTO @DATA(ls_adrc) FROM adrc WHERE addrnumber EQ @ls_lfa1-adrnr.
+
+    rv_name = |{ ls_adrc-name1 }{ ls_adrc-name2 }{ ls_adrc-name3 }{ ls_adrc-name4 }|.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="9 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="IV_PERNR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PERNR_D"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="IV_SPLIT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="FLAG" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="IT_PAYRESULTS" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAY99_TAB_OF_RESULTS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PAY_BT" SCONAME="BT_WC_TABLE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM"/>
+   <source>METHOD ret_pay_bt.
+
+    DATA: wa_wc_sum TYPE mtys_wc_lgart_sum,
+          lv_seqnr  TYPE seqc5,
+          lt_p0015  TYPE p0015_tab.
+
+    DATA(lv_begda) = iv_begda.
+    DATA(lv_endda) = iv_endda.
+
+    IF lv_begda IS INITIAL.
+      lv_begda = mv_begda.
+    ENDIF.
+
+    IF lv_endda IS INITIAL.
+      lv_endda = mv_endda.
+    ENDIF.
+
+    SELECT * INTO TABLE @DATA(lt_rgdir) FROM hrpy_rgdir WHERE pernr EQ @iv_pernr.
+
+    SELECT * INTO TABLE @DATA(lt_pay) FROM reguh WHERE pernr EQ @iv_pernr
+                                                   AND ausfd LE @lv_endda
+                                                   AND ausfd GE @lv_begda
+                                                   AND dorigin EQ &apos;HR-PY&apos;
+                                                   AND avisg NE &apos;A&apos;.&quot;не сторно
+
+    SELECT * FROM t77dme_pcd_wt INTO TABLE @DATA(lt_pcd_wt) WHERE molga EQ @mc_molga.
+
+*    DATA wa_sum TYPE mtys_lgart_sum.
+    LOOP AT mt_wcode INTO DATA(ls_wcode) WHERE wcsrc EQ &apos;B&apos;.
+      REPLACE ALL OCCURRENCES OF &apos;/&apos; IN ls_wcode-wcode WITH &apos;_&apos;.
+      DATA(ls_wc_wcode) = VALUE mtys_wc_lgart_sum( wcode = ls_wcode-wcode ).
+      &quot; Пробегаемся по всем ВО WCODE
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_lgart).
+        READ TABLE lt_pcd_wt INTO DATA(ls_pcd_wt) WITH KEY lgart = ls_lgart-lgart.
+        &quot; Пробегаемся по результатам расчета
+        LOOP AT lt_pay INTO DATA(ls_pay) WHERE purp_code EQ ls_pcd_wt-purpcode_default.
+          DATA(ls_sum) = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+          MULTIPLY ls_pay-rbetr BY -1.
+          &quot;DATA(lv_abs_rbetr) = abs( ls_pay-rbetr ).
+          ADD ls_pay-rbetr TO ls_sum-value_rt.
+          IF ls_lgart-inver IS NOT INITIAL.
+            MULTIPLY ls_sum-value_rt BY -1.
+          ENDIF.
+          IF iv_split EQ &apos;X&apos;.
+            ls_sum-lgtxt = |{ ls_sum-lgtxt } от { ls_pay-zaldt DATE = USER }|.
+          ENDIF.
+          COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+        ENDLOOP.
+      ENDLOOP.
+      APPEND ls_wc_wcode TO bt_wc_table.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PERIO" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="14 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PERIO" SCONAME="IV_INPER" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="IPERI"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PERIO" SCONAME="IV_FORMAT" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="CHAR1" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_PERIO" SCONAME="RV_PERIO" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRINGVAL"/>
+   <source>METHOD ret_perio.
+    DATA: lv_fcmnr  TYPE fcmnr,
+          lv_fcktx  TYPE fcktx,
+          lv_fcltx  TYPE fcltx,
+          lt_months TYPE TABLE OF t247.
+
+    CHECK iv_inper IS NOT INITIAL.
+    lv_fcmnr = iv_inper+4(2).
+
+
+    CALL FUNCTION &apos;MONTH_NAMES_GET&apos;
+      EXPORTING
+        language    = sy-langu
+      TABLES
+        month_names = lt_months.
+
+    READ TABLE lt_months INTO DATA(ls_month) WITH KEY mnr = lv_fcmnr.
+
+    CHECK sy-subrc = 0.
+
+    CASE iv_format.
+      WHEN &apos;L&apos;.
+        rv_perio = |Расчётный листок за { ls_month-ltx } { iv_inper(4) } г.|.
+      WHEN &apos;F&apos;.
+        rv_perio = |{ ls_month-ltx } { iv_inper(4) } г.|.
+      WHEN &apos;M&apos;.
+        rv_perio = |{ ls_month-ltx } { iv_inper(4) }|.
+      WHEN OTHERS.
+        TRANSLATE ls_month-ktx TO LOWER CASE.
+        TRANSLATE ls_month-ktx(1) TO UPPER CASE.
+        rv_perio = |{ ls_month-ktx } { iv_inper+2(2) }|.
+    ENDCASE.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="7 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT" SCONAME="IT_PAYRESULTS" VERSION="1" LANGU="R" DESCRIPT="Table of PAYKZ_RESULT" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT" SCONAME="RT_WC_TABLE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM"/>
+   <source>method ret_rt.
+
+    data: lv_lifnr     type lifnr,
+          lv_lifnrname type stringval.
+
+    data wa_wc_sum type mtys_wc_lgart_sum.
+    data lv_multi type i value 1.
+*    DATA wa_sum TYPE mtys_lgart_sum.
+    loop at mt_wcode into data(ls_wcode).&quot; WHERE wcsrc EQ &apos;R&apos; OR wcsrc EQ &apos;A&apos;.
+      replace all occurrences of &apos;/&apos; in ls_wcode-wcode with &apos;_&apos;.
+      data(ls_wc_wcode) = value mtys_wc_lgart_sum( wcode = ls_wcode-wcode name = ls_wcode-name ).
+      &quot; Пробегаемся по всем ВО WCODE
+
+*      SELECT * INTO TABLE @DATA(lt_511) FROM t511 FOR ALL ENTRIES IN @ls_wcode-t_lgart
+*                                        WHERE lgart EQ @ls_wcode-t_lgart-lgart
+*                                          AND molga EQ @mc_molga.
+
+      data lt_511 type standard table of t511 with default key.
+      loop at ls_wcode-t_lgart into data(ls_wagetype).
+        read table mt_t511 into data(ls_511) with key lgart = ls_wagetype-lgart.
+        if sy-subrc = 0.
+          append ls_511 to lt_511.
+        endif.
+      endloop.
+
+      loop at ls_wcode-t_lgart into data(ls_lgart).
+        &quot; Пробегаемся по результатам расчета
+
+
+        loop at it_rgdir into data(ls_rgdir).
+          loop at it_payresults reference into data(lr_result) where evp-seqnr eq ls_rgdir-seqnr.
+            &quot;    READ TABLE it_rgdir INTO DATA(ls_rgdir) WITH KEY seqnr = lr_result-&gt;evp-seqnr.
+
+            &quot; BREAK-POINT.
+            data(lt_ab) = ret_corr_ab( it_ab = lr_result-&gt;inter-ab[] ).
+            &quot; BREAK-POINT.
+            case ls_wcode-wcsrc.
+              when &apos;A&apos; or &apos;R&apos;. &quot; rt
+                data(ls_nat) = lr_result-&gt;nat.
+
+                loop at lr_result-&gt;inter-rt into data(ls_rt) where lgart eq ls_lgart-lgart.
+                  data(ls_sum) = corresponding mtys_lgart_sum( ls_lgart ).
+
+                  if ls_rgdir-srtza ne &apos;A&apos;.
+                    lv_multi = -1.
+                  else.
+                    lv_multi = 1.
+                  endif.
+
+                  if ls_lgart-inver is not initial.
+                    multiply lv_multi by -1.
+                  endif.
+
+                  multiply ls_rt-anzhl by lv_multi.
+                  multiply ls_rt-betrg by lv_multi.
+                  multiply ls_rt-betpe by lv_multi.
+
+                  case ls_lgart-clcfd.
+                    when &apos;N&apos;.
+                      add ls_rt-anzhl to ls_sum-value_days.
+                    when &apos;A&apos;.
+                      add ls_rt-betrg to ls_sum-value_rt.
+                    when &apos;B&apos;.
+                      add ls_rt-betrg to ls_sum-value_rt.
+                      add ls_rt-anzhl to ls_sum-value_days.
+                    when &apos;D&apos;.
+                      add ls_rt-betrg to ls_sum-value_rt.
+                      add ls_rt-anzhl to ls_sum-value_hours.
+                    when &apos;E&apos;.
+                      add ls_rt-betrg to ls_sum-value_rt.
+                      loop at lr_result-&gt;inter-rt into data(ls_rt_tmp) where apznr = ls_rt-apznr
+                                                                         and abznr = ls_rt-abznr.
+
+                        multiply ls_rt_tmp-anzhl by lv_multi.
+                        case ls_rt_tmp-lgart.
+                          when &apos;/854&apos;.
+                            add ls_rt_tmp-anzhl to ls_sum-value_hours.
+                          when &apos;/853&apos;.
+                            add ls_rt_tmp-anzhl to ls_sum-value_days.
+                        endcase.
+                      endloop.
+                    when &apos;W&apos;.&quot;ночные часы
+                      add ls_rt-betrg to ls_sum-value_rt.
+                      add ls_rt-anzhl to ls_sum-value_hours.
+                      read table lr_result-&gt;inter-wpbp into data(ls_wpbp) with key apznr = ls_rt-apznr.
+                      if sy-subrc = 0.
+                        ls_sum-perio = ret_wpbp_perio( is_wpbp = ls_wpbp ).
+                      endif.
+                    when &apos;X&apos; or &apos;Y&apos;.
+                      add ls_rt-betrg to ls_sum-value_rt.
+*                    CASE ls_lgart-clcfd.
+*                      WHEN &apos;X&apos;.
+*                        ADD ls_rt-anzhl TO ls_sum-value_days.
+*                      WHEN &apos;Y&apos;.
+*                        ADD ls_rt-anzhl TO ls_sum-value_hours.
+*                    ENDCASE.
+                      read table lt_ab into data(ls_ab) with key abznr = ls_rt-abznr.
+                      if sy-subrc = 0.
+                        ls_sum-perio = ret_ab_perio( is_ab = ls_ab ).
+                        add: ls_ab-stdaz to ls_sum-value_hours,
+                             ls_ab-abrtg to ls_sum-value_days.
+                      endif.
+
+
+
+                    when &apos;Z&apos;.
+                      add ls_rt-betrg to ls_sum-value_rt.
+                      read table lr_result-&gt;inter-v0 into data(ls_v0) with key v0typ = ls_rt-v0typ
+                                                                               v0znr = ls_rt-v0znr.
+                      if sy-subrc = 0.
+                        clear: lv_lifnr,
+                               lv_lifnrname.
+
+                        lv_lifnr = ls_v0-vinfo+4(10).
+                        lv_lifnrname = ret_lifnr_name( iv_lifnr = lv_lifnr ).
+                        if lv_lifnrname is not initial.
+                          ls_sum-lgtxt = |{ ls_sum-lgtxt } ({ lv_lifnrname })|.
+                        endif.
+                      endif.
+                    when &apos;8&apos;.&quot;Часы, суммы из KZAV, ставка из RT
+                      read table mt_t51av_p into data(ls_t51av_p) with key lgart = ls_rt-lgart.
+                      if sy-subrc = 0.
+                        loop at ls_nat-kzav into data(ls_kzav) where avrule eq ls_t51av_p-avrule
+                                                                 and appwt  eq ls_rt-apznr
+                                                                 and abpwt  eq ls_rt-abznr.
+
+                          add: ls_kzav-anzhl to ls_sum-value_hours,
+                               ls_kzav-betrg to ls_sum-value_rt.
+                          ls_sum-value_rate = ls_rt-betpe.
+
+                        endloop.
+                      endif.
+                    when &apos;9&apos;.&quot;Дни, суммы из KZAV, ставка из RT
+                      read table mt_t51av_p into ls_t51av_p with key lgart = ls_rt-lgart.
+                      if sy-subrc = 0.
+                        loop at ls_nat-kzav into ls_kzav where avrule eq ls_t51av_p-avrule
+                                                           and appwt  eq ls_rt-apznr
+                                                           and abpwt  eq ls_rt-abznr.
+
+                          add: ls_kzav-anzhl to ls_sum-value_days,
+                               ls_kzav-betrg to ls_sum-value_rt.
+
+                          ls_sum-value_rate = ls_rt-betpe.
+                        endloop.
+                      endif.
+                    when &apos;V&apos;. &quot;RT для факт.перечисл./5*
+                      add ls_rt-betrg to ls_sum-value_rt.
+                      loop at lr_result-&gt;inter-bt reference into data(lr_bt) where lgart(2) = &apos;/5&apos;.
+                        ls_sum-dtadt = lr_bt-&gt;dtadt.
+                      endloop.
+                  endcase.
+
+                  ls_sum-value_rate = ret_betpe(
+                          is_rt    = ls_rt
+                          it_rt    = lr_result-&gt;inter-rt
+                   &quot;       it_511   = lt_511
+                      ).
+
+*                READ TABLE lr_result-&gt;inter-wpbp INTO ls_wpbp WITH KEY apznr = ls_rt-apznr.
+*                IF sy-subrc = 0 AND ls_wpbp-bukrs(2) = &apos;15&apos;.
+*                  ls_sum-apznr = ls_rt-apznr.
+*                  ls_sum-schkz = ls_wpbp-schkz.
+*                  ls_sum-asoll = ls_wpbp-asoll.
+*                  ls_sum-ksoll = ls_wpbp-ksoll.
+*                  ls_sum-ssoll = ls_wpbp-ssoll.
+*                ENDIF.
+
+                  &quot;ls_sum-value_rt = ls_sum-value.
+*                IF ls_lgart-inver IS NOT INITIAL.
+*                  MULTIPLY ls_sum-value BY -1.
+*                ENDIF.
+                  &quot;  ls_sum-inper = lr_result-&gt;evp-inper.
+                  ls_sum-fpper = lr_result-&gt;evp-fpper.
+                  ls_sum-lgart = ls_rt-lgart.
+
+
+
+                  read table ls_wc_wcode-t_lgart transporting no fields with key lgart = ls_sum-lgart.
+                  collect ls_sum into ls_wc_wcode-t_lgart.
+                endloop.
+
+              when &apos;B&apos;. &quot; bt
+                loop at lr_result-&gt;inter-bt reference into lr_bt where lgart eq ls_lgart-lgart and dtadt is not initial.
+                  case ls_lgart-clcfd.
+                    when &apos;A&apos;.
+                      add lr_bt-&gt;betrg to ls_sum-value_rt.
+                  endcase.
+                endloop.
+
+              when &apos;Z&apos;. &quot;crt
+                check ls_rgdir-fpper eq ls_rgdir-inper and ls_rgdir-srtza eq &apos;A&apos;.
+                loop at lr_result-&gt;inter-crt into data(ls_crt) where lgart eq ls_lgart-lgart
+                                                                 and cumty eq &apos;Y&apos;.
+                  ls_sum = corresponding mtys_lgart_sum( ls_lgart ).
+                  add ls_crt-betrg to ls_sum-value_rt.
+                  ls_sum-fpper = lr_result-&gt;evp-fpper.
+                  ls_sum-lgart = ls_crt-lgart.
+                  read table ls_wc_wcode-t_lgart transporting no fields with key lgart = ls_sum-lgart.
+                  collect ls_sum into ls_wc_wcode-t_lgart.
+                endloop.
+            endcase.
+          endloop.
+        endloop.
+
+        delete ls_wc_wcode-t_lgart where value_hours = 0 and value_days = 0 and value_rt = 0.
+        &quot;
+
+      endloop.
+      append ls_wc_wcode to rt_wc_table.
+    endloop.
+  endmethod.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="8 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER" SCONAME="IT_PAYRESULTS" VERSION="1" LANGU="R" DESCRIPT="Table of PAYKZ_RESULT" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER" SCONAME="RT_WC_TABLE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM"/>
+   <source>METHOD ret_rt_inper.
+
+    DATA: lv_lifnr     TYPE lifnr,
+          lv_lifnrname TYPE stringval.
+
+    DATA wa_wc_sum TYPE mtys_wc_lgart_sum.
+    DATA lv_multi TYPE i VALUE 1.
+*    DATA wa_sum TYPE mtys_lgart_sum.
+    LOOP AT mt_wcode INTO DATA(ls_wcode).&quot; WHERE wcsrc EQ &apos;R&apos; OR wcsrc EQ &apos;A&apos;.
+      REPLACE ALL OCCURRENCES OF &apos;/&apos; IN ls_wcode-wcode WITH &apos;_&apos;.
+      DATA(ls_wc_wcode) = VALUE mtys_wc_lgart_sum( wcode = ls_wcode-wcode name = ls_wcode-name ).
+      &quot; Пробегаемся по всем ВО WCODE
+
+*      SELECT * INTO TABLE @DATA(lt_511) FROM t511 FOR ALL ENTRIES IN @ls_wcode-t_lgart
+*                                        WHERE lgart EQ @ls_wcode-t_lgart-lgart
+*                                          AND molga EQ @mc_molga.
+
+      DATA lt_511 TYPE STANDARD TABLE OF t511 WITH DEFAULT KEY.
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_wagetype).
+        READ TABLE mt_t511 INTO DATA(ls_511) WITH KEY lgart = ls_wagetype-lgart.
+        IF sy-subrc = 0.
+          APPEND ls_511 TO lt_511.
+        ENDIF.
+      ENDLOOP.
+
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_lgart).
+        &quot; Пробегаемся по результатам расчета
+        LOOP AT it_payresults REFERENCE INTO DATA(lr_result).
+          READ TABLE it_rgdir INTO DATA(ls_rgdir) WITH KEY seqnr = lr_result-&gt;evp-seqnr.
+          CHECK sy-subrc = 0.
+          &quot; BREAK-POINT.
+          DATA(lt_ab) = ret_corr_ab( it_ab = lr_result-&gt;inter-ab[] ).
+          &quot; BREAK-POINT.
+          CASE ls_wcode-wcsrc.
+            WHEN &apos;A&apos; OR &apos;R&apos;. &quot; rt
+              DATA(ls_nat) = lr_result-&gt;nat.
+
+              LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt) WHERE lgart EQ ls_lgart-lgart.
+                DATA(ls_sum) = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+
+                IF ls_rgdir-srtza NE &apos;A&apos;.
+                  lv_multi = -1.
+                ELSE.
+                  lv_multi = 1.
+                ENDIF.
+
+                IF ls_lgart-inver IS NOT INITIAL.
+                  MULTIPLY lv_multi BY -1.
+                ENDIF.
+
+                MULTIPLY ls_rt-anzhl BY lv_multi.
+                MULTIPLY ls_rt-betrg BY lv_multi.
+                MULTIPLY ls_rt-betpe BY lv_multi.
+
+                CASE ls_lgart-clcfd.
+                  WHEN &apos;N&apos;.
+                    ADD ls_rt-anzhl TO ls_sum-value_days.
+                  WHEN &apos;A&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                  WHEN &apos;B&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    ADD ls_rt-anzhl TO ls_sum-value_days.
+                  WHEN &apos;D&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    ADD ls_rt-anzhl TO ls_sum-value_hours.
+                  WHEN &apos;E&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt_tmp) WHERE apznr = ls_rt-apznr
+                                                                       AND abznr = ls_rt-abznr.
+
+                      MULTIPLY ls_rt_tmp-anzhl BY lv_multi.
+                      CASE ls_rt_tmp-lgart.
+                        WHEN &apos;/854&apos;.
+                          ADD ls_rt_tmp-anzhl TO ls_sum-value_hours.
+                        WHEN &apos;/853&apos;.
+                          ADD ls_rt_tmp-anzhl TO ls_sum-value_days.
+                      ENDCASE.
+                    ENDLOOP.
+                  WHEN &apos;W&apos;.&quot;ночные часы
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    ADD ls_rt-anzhl TO ls_sum-value_hours.
+                    READ TABLE lr_result-&gt;inter-wpbp INTO DATA(ls_wpbp) WITH KEY apznr = ls_rt-apznr.
+                    IF sy-subrc = 0.
+                      ls_sum-perio = ret_wpbp_perio( is_wpbp = ls_wpbp ).
+                    ENDIF.
+                  WHEN &apos;X&apos; OR &apos;Y&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+*                    CASE ls_lgart-clcfd.
+*                      WHEN &apos;X&apos;.
+*                        ADD ls_rt-anzhl TO ls_sum-value_days.
+*                      WHEN &apos;Y&apos;.
+*                        ADD ls_rt-anzhl TO ls_sum-value_hours.
+*                    ENDCASE.
+                    READ TABLE lt_ab INTO DATA(ls_ab) WITH KEY abznr = ls_rt-abznr.
+                    IF sy-subrc = 0.
+                      ls_sum-perio = ret_ab_perio( is_ab = ls_ab ).
+                      ADD: ls_ab-stdaz TO ls_sum-value_hours,
+                           ls_ab-abrtg TO ls_sum-value_days.
+                    ENDIF.
+
+
+
+                  WHEN &apos;Z&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    READ TABLE lr_result-&gt;inter-v0 INTO DATA(ls_v0) WITH KEY v0typ = ls_rt-v0typ
+                                                                             v0znr = ls_rt-v0znr.
+                    IF sy-subrc = 0.
+                      CLEAR: lv_lifnr,
+                             lv_lifnrname.
+
+                      lv_lifnr = ls_v0-vinfo+4(10).
+                      lv_lifnrname = ret_lifnr_name( iv_lifnr = lv_lifnr ).
+                      IF lv_lifnrname IS NOT INITIAL.
+                        ls_sum-lgtxt = |{ ls_sum-lgtxt } ({ lv_lifnrname })|.
+                      ENDIF.
+                    ENDIF.
+                  WHEN &apos;8&apos;.&quot;Часы, суммы из KZAV, ставка из RT
+                    READ TABLE mt_t51av_p INTO DATA(ls_t51av_p) WITH KEY lgart = ls_rt-lgart.
+                    IF sy-subrc = 0.
+                      LOOP AT ls_nat-kzav INTO DATA(ls_kzav) WHERE avrule EQ ls_t51av_p-avrule
+                                                               AND appwt  EQ ls_rt-apznr
+                                                               AND abpwt  EQ ls_rt-abznr.
+
+                        ADD: ls_kzav-anzhl TO ls_sum-value_hours,
+                             ls_kzav-betrg TO ls_sum-value_rt.
+                        ls_sum-value_rate = ls_rt-betpe.
+
+                      ENDLOOP.
+                    ENDIF.
+                  WHEN &apos;9&apos;.&quot;Дни, суммы из KZAV, ставка из RT
+                    READ TABLE mt_t51av_p INTO ls_t51av_p WITH KEY lgart = ls_rt-lgart.
+                    IF sy-subrc = 0.
+                      LOOP AT ls_nat-kzav INTO ls_kzav WHERE avrule EQ ls_t51av_p-avrule
+                                                         AND appwt  EQ ls_rt-apznr
+                                                         AND abpwt  EQ ls_rt-abznr.
+
+                        ADD: ls_kzav-anzhl TO ls_sum-value_days,
+                             ls_kzav-betrg TO ls_sum-value_rt.
+
+                        ls_sum-value_rate = ls_rt-betpe.
+                      ENDLOOP.
+                    ENDIF.
+                  WHEN &apos;V&apos;. &quot;RT для факт.перечисл./5*
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    LOOP AT lr_result-&gt;inter-bt REFERENCE INTO DATA(lr_bt) WHERE lgart(2) = &apos;/5&apos;.
+                      ls_sum-dtadt = lr_bt-&gt;dtadt.
+                    ENDLOOP.
+                ENDCASE.
+
+                ls_sum-value_rate = ret_betpe(
+                        is_rt    = ls_rt
+                        it_rt    = lr_result-&gt;inter-rt
+                 &quot;       it_511   = lt_511
+                    ).
+
+*                READ TABLE lr_result-&gt;inter-wpbp INTO ls_wpbp WITH KEY apznr = ls_rt-apznr.
+*                IF sy-subrc = 0 AND ls_wpbp-bukrs(2) = &apos;15&apos;.
+*                  ls_sum-apznr = ls_rt-apznr.
+*                  ls_sum-schkz = ls_wpbp-schkz.
+*                  ls_sum-asoll = ls_wpbp-asoll.
+*                  ls_sum-ksoll = ls_wpbp-ksoll.
+*                  ls_sum-ssoll = ls_wpbp-ssoll.
+*                ENDIF.
+
+                &quot;ls_sum-value_rt = ls_sum-value.
+*                IF ls_lgart-inver IS NOT INITIAL.
+*                  MULTIPLY ls_sum-value BY -1.
+*                ENDIF.
+                &quot;  ls_sum-inper = lr_result-&gt;evp-inper.
+                ls_sum-fpper = lr_result-&gt;evp-fpper.
+                ls_sum-lgart = ls_rt-lgart.
+
+
+
+                READ TABLE ls_wc_wcode-t_lgart TRANSPORTING NO FIELDS WITH KEY lgart = ls_sum-lgart.
+                COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+              ENDLOOP.
+
+            WHEN &apos;B&apos;. &quot; bt
+              LOOP AT lr_result-&gt;inter-bt REFERENCE INTO lr_bt WHERE lgart EQ ls_lgart-lgart AND dtadt IS NOT INITIAL.
+                CASE ls_lgart-clcfd.
+                  WHEN &apos;A&apos;.
+                    ADD lr_bt-&gt;betrg TO ls_sum-value_rt.
+                ENDCASE.
+              ENDLOOP.
+
+            WHEN &apos;Z&apos;. &quot;crt
+              CHECK ls_rgdir-fpper EQ ls_rgdir-inper AND ls_rgdir-srtza EQ &apos;A&apos;.
+              LOOP AT lr_result-&gt;inter-crt INTO DATA(ls_crt) WHERE lgart EQ ls_lgart-lgart
+                                                               AND cumty EQ &apos;Y&apos;.
+                ls_sum = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+                ADD ls_crt-betrg TO ls_sum-value_rt.
+                ls_sum-fpper = lr_result-&gt;evp-fpper.
+                ls_sum-lgart = ls_crt-lgart.
+                READ TABLE ls_wc_wcode-t_lgart TRANSPORTING NO FIELDS WITH KEY lgart = ls_sum-lgart.
+                COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+              ENDLOOP.
+          ENDCASE.
+        ENDLOOP.
+
+        DELETE ls_wc_wcode-t_lgart WHERE value_hours = 0 AND value_days = 0 AND value_rt = 0.
+        &quot;
+
+      ENDLOOP.
+      APPEND ls_wc_wcode TO rt_wc_table.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER_NEW" VERSION="1" LANGU="R" DESCRIPT="с учетом обратных расчетов" EXPOSURE="2" STATE="1" EDITORDER="6 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER_NEW" SCONAME="IT_RGDIR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPY_TT_RGDIR"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER_NEW" SCONAME="IT_PAYRESULTS" VERSION="1" LANGU="R" DESCRIPT="Table of PAYKZ_RESULT" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_RT_INPER_NEW" SCONAME="RT_WC_TABLE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM"/>
+   <source>METHOD ret_rt_inper_new.
+
+    DATA: lv_lifnr     TYPE lifnr,
+          lv_lifnrname TYPE stringval.
+
+    DATA wa_wc_sum TYPE mtys_wc_lgart_sum.
+    DATA lv_multi TYPE i VALUE 1.
+*    DATA wa_sum TYPE mtys_lgart_sum.
+    LOOP AT mt_wcode INTO DATA(ls_wcode).&quot; WHERE wcsrc EQ &apos;R&apos; OR wcsrc EQ &apos;A&apos;.
+      REPLACE ALL OCCURRENCES OF &apos;/&apos; IN ls_wcode-wcode WITH &apos;_&apos;.
+      DATA(ls_wc_wcode) = VALUE mtys_wc_lgart_sum( wcode = ls_wcode-wcode name = ls_wcode-name ).
+      &quot; Пробегаемся по всем ВО WCODE
+
+*      SELECT * INTO TABLE @DATA(lt_511) FROM t511 FOR ALL ENTRIES IN @ls_wcode-t_lgart
+*                                        WHERE lgart EQ @ls_wcode-t_lgart-lgart
+*                                          AND molga EQ @mc_molga.
+      DATA lt_511 TYPE STANDARD TABLE OF t511 WITH DEFAULT KEY.
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_wagetype).
+        READ TABLE mt_t511 INTO DATA(ls_511) WITH KEY lgart = ls_wagetype-lgart.
+        IF sy-subrc = 0.
+          APPEND ls_511 TO lt_511.
+        ENDIF.
+      ENDLOOP.
+
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_lgart).
+        &quot; Пробегаемся по результатам расчета
+        LOOP AT it_payresults REFERENCE INTO DATA(lr_result).
+          READ TABLE it_rgdir INTO DATA(ls_rgdir) WITH KEY seqnr = lr_result-&gt;evp-seqnr.
+          CHECK sy-subrc = 0.
+          &quot; BREAK-POINT.
+          DATA(lt_ab) = ret_corr_ab( it_ab = lr_result-&gt;inter-ab[] ).
+          &quot; BREAK-POINT.
+
+          CASE ls_wcode-wcsrc.
+            WHEN &apos;A&apos; OR &apos;R&apos;. &quot; rt
+              LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt) WHERE lgart EQ ls_lgart-lgart.
+
+                IF ( ls_rgdir-inper IS INITIAL OR ls_rgdir-inper = &apos;000000&apos; ) AND ls_rgdir-fpper IS NOT INITIAL AND ls_rgdir-ocrsn IS INITIAL AND ls_rgdir-inocr IS NOT INITIAL.
+*          IF lr_result-&gt;evp-fpper &lt;&gt; lr_result-&gt;evp-inper.
+                  LOOP AT it_payresults REFERENCE INTO DATA(lr_result_actual) WHERE evp-inper = ls_rgdir-fpper AND evp-fpper = ls_rgdir-fpper.
+                    LOOP AT lr_result_actual-&gt;inter-rt INTO DATA(ls_rt_actual) WHERE lgart EQ ls_lgart-lgart.
+                      ls_rt-anzhl = ls_rt_actual-anzhl.
+                      ls_rt-betrg = ls_rt_actual-betrg.
+                      ls_rt-betpe = ls_rt_actual-betpe.
+*                ls_sum-value_days = ls_sum-value_days - ls_rt_actual-anzhl.
+*                ls_sum-value_rt = ls_sum-value_rt - ls_rt_actual-betrg.
+*                ls_sum-value_rate = ls_sum-value_rate - ls_rt_actual-betpe.
+                    ENDLOOP.
+                  ENDLOOP.
+                ENDIF.
+
+                DATA(ls_sum) = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+
+                IF ls_rgdir-srtza NE &apos;A&apos;.
+                  lv_multi = -1.
+                ELSE.
+                  lv_multi = 1.
+                ENDIF.
+
+                IF ls_lgart-inver IS NOT INITIAL.
+                  MULTIPLY lv_multi BY -1.
+                ENDIF.
+
+                MULTIPLY ls_rt-anzhl BY lv_multi.
+                MULTIPLY ls_rt-betrg BY lv_multi.
+                MULTIPLY ls_rt-betpe BY lv_multi.
+
+                CASE ls_lgart-clcfd.
+                  WHEN &apos;N&apos;.
+                    ADD ls_rt-anzhl TO ls_sum-value_days.
+                  WHEN &apos;A&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                  WHEN &apos;B&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    ADD ls_rt-anzhl TO ls_sum-value_days.
+                  WHEN &apos;D&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    ADD ls_rt-anzhl TO ls_sum-value_hours.
+                  WHEN &apos;E&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt_tmp) WHERE apznr = ls_rt-apznr
+                                                                       AND abznr = ls_rt-abznr.
+
+                      MULTIPLY ls_rt_tmp-anzhl BY lv_multi.
+                      CASE ls_rt_tmp-lgart.
+                        WHEN &apos;/854&apos;.
+                          ADD ls_rt_tmp-anzhl TO ls_sum-value_hours.
+                        WHEN &apos;/853&apos;.
+                          ADD ls_rt_tmp-anzhl TO ls_sum-value_days.
+                      ENDCASE.
+                    ENDLOOP.
+                  WHEN &apos;W&apos;.&quot;ночные часы
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    ADD ls_rt-anzhl TO ls_sum-value_hours.
+                    READ TABLE lr_result-&gt;inter-wpbp INTO DATA(ls_wpbp) WITH KEY apznr = ls_rt-apznr.
+                    IF sy-subrc = 0.
+                      ls_sum-perio = ret_wpbp_perio( is_wpbp = ls_wpbp ).
+                    ENDIF.
+                  WHEN &apos;X&apos; OR &apos;Y&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    CASE ls_lgart-clcfd.
+                      WHEN &apos;X&apos;.
+                        ADD ls_rt-anzhl TO ls_sum-value_days.
+                      WHEN &apos;Y&apos;.
+                        ADD ls_rt-anzhl TO ls_sum-value_hours.
+                    ENDCASE.
+                    READ TABLE lt_ab INTO DATA(ls_ab) WITH KEY abznr = ls_rt-abznr.
+                    ls_sum-perio = ret_ab_perio( is_ab = ls_ab ).
+
+
+
+
+                  WHEN &apos;Z&apos;.
+                    ADD ls_rt-betrg TO ls_sum-value_rt.
+                    READ TABLE lr_result-&gt;inter-v0 INTO DATA(ls_v0) WITH KEY v0typ = ls_rt-v0typ
+                                                                             v0znr = ls_rt-v0znr.
+                    IF sy-subrc = 0.
+                      CLEAR: lv_lifnr,
+                             lv_lifnrname.
+
+                      lv_lifnr = ls_v0-vinfo+4(10).
+                      lv_lifnrname = ret_lifnr_name( iv_lifnr = lv_lifnr ).
+                      IF lv_lifnrname IS NOT INITIAL.
+                        ls_sum-lgtxt = |{ ls_sum-lgtxt } ({ lv_lifnrname })|.
+                      ENDIF.
+                    ENDIF.
+                ENDCASE.
+
+                ls_sum-value_rate = ret_betpe(
+                        is_rt    = ls_rt
+                        it_rt    = lr_result-&gt;inter-rt
+                 &quot;       it_511   = lt_511
+                    ).
+
+                READ TABLE lr_result-&gt;inter-wpbp INTO ls_wpbp WITH KEY apznr = ls_rt-apznr.
+                IF sy-subrc = 0.
+                  ls_sum-apznr = ls_rt-apznr.
+                  ls_sum-schkz = ls_wpbp-schkz.
+                  ls_sum-asoll = ls_wpbp-asoll.
+                  ls_sum-ksoll = ls_wpbp-ksoll.
+                  ls_sum-ssoll = ls_wpbp-ssoll.
+                ENDIF.
+
+                &quot;ls_sum-value_rt = ls_sum-value.
+*                IF ls_lgart-inver IS NOT INITIAL.
+*                  MULTIPLY ls_sum-value BY -1.
+*                ENDIF.
+                &quot;  ls_sum-inper = lr_result-&gt;evp-inper.
+                ls_sum-fpper = lr_result-&gt;evp-fpper.
+                ls_sum-lgart = ls_rt-lgart.
+
+                READ TABLE ls_wc_wcode-t_lgart TRANSPORTING NO FIELDS WITH KEY lgart = ls_sum-lgart.
+                COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+              ENDLOOP.
+
+            WHEN &apos;B&apos;. &quot; bt
+              LOOP AT lr_result-&gt;inter-bt REFERENCE INTO DATA(lr_bt) WHERE lgart EQ ls_lgart-lgart AND dtadt IS NOT INITIAL.
+                CASE ls_lgart-clcfd.
+                  WHEN &apos;A&apos; OR  &apos;P&apos;.
+                    ADD lr_bt-&gt;betrg TO ls_sum-value_rt.
+                ENDCASE.
+              ENDLOOP.
+
+            WHEN &apos;Z&apos;. &quot;crt
+              CHECK ls_rgdir-fpper EQ ls_rgdir-inper AND ls_rgdir-srtza EQ &apos;A&apos;.
+              LOOP AT lr_result-&gt;inter-crt INTO DATA(ls_crt) WHERE lgart EQ ls_lgart-lgart
+                                                               AND cumty EQ &apos;Y&apos;.
+                ls_sum = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+                ADD ls_crt-betrg TO ls_sum-value_rt.
+                ls_sum-fpper = lr_result-&gt;evp-fpper.
+                ls_sum-lgart = ls_crt-lgart.
+                READ TABLE ls_wc_wcode-t_lgart TRANSPORTING NO FIELDS WITH KEY lgart = ls_sum-lgart.
+                COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+              ENDLOOP.
+          ENDCASE.
+        ENDLOOP.
+
+        DELETE ls_wc_wcode-t_lgart WHERE value_hours = 0 AND value_days = 0 AND value_rt = 0.
+        &quot;
+
+      ENDLOOP.
+      APPEND ls_wc_wcode TO rt_wc_table.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="10 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="IV_PERNR" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PERNR_D" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="IS_RGDIR" VERSION="1" LANGU="R" DESCRIPT="Каталог кластера (для экспорта и импорта РезультатовРасчета)" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC261"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="IT_RESULT" VERSION="1" LANGU="R" DESCRIPT="Тип для таблицы результатов расчета" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="IV_IPN" VERSION="1" LANGU="R" DESCRIPT="Элемент данных для домена BOOLE: TRUE (=&apos;X&apos;) и FALSE (=&apos; &apos;)" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BOOLE_D" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="IV_OPV" VERSION="1" LANGU="R" DESCRIPT="Элемент данных для домена BOOLE: TRUE (=&apos;X&apos;) и FALSE (=&apos; &apos;)" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BOOLE_D" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="IV_OSMS" VERSION="1" LANGU="R" DESCRIPT="Элемент данных для домена BOOLE: TRUE (=&apos;X&apos;) и FALSE (=&apos; &apos;)" CMPTYPE="1" MTDTYPE="0" EDITORDER="6 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BOOLE_D" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_SALDO_BEG" SCONAME="RV_SALDO" VERSION="1" LANGU="R" DESCRIPT="Расчет зарплаты: сумма" CMPTYPE="1" MTDTYPE="0" EDITORDER="7 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MAXBT"/>
+   <source>METHOD ret_saldo_beg.
+    DATA: lv_begda  TYPE begda,
+          lv_inper  TYPE iperi,
+          lv_begper TYPE d,
+          lv_endper TYPE d,
+          lv_seqnr  TYPE seqc5,
+          lt_rgdir  TYPE TABLE OF pc261.
+
+    TYPES: ltyt_r_lgart TYPE RANGE OF lgart.
+
+    lv_begda = |{ is_rgdir-inper }01|.
+    SUBTRACT 1 FROM lv_begda.
+    lv_inper = lv_begda(6).
+
+    CALL FUNCTION &apos;CU_READ_RGDIR_NEW&apos;
+      EXPORTING
+        persnr               = iv_pernr
+        check_read_authority = &apos;X&apos;
+      TABLES
+        in_rgdir             = lt_rgdir.
+
+
+
+    CALL FUNCTION &apos;HR_JP_MONTH_BEGIN_END_DATE&apos;
+      EXPORTING
+        iv_date             = lv_begda
+      IMPORTING
+        ev_month_begin_date = lv_begper
+        ev_month_end_date   = lv_endper.
+
+    DATA(lr_lgart) = VALUE ltyt_r_lgart( sign = &apos;I&apos; option = &apos;EQ&apos; ( low = &apos;/563&apos; )
+                                                                  ( low = &apos;/566&apos; ) ).
+
+    DATA(lv_lgart_bt) = VALUE lgart( ).
+    lv_lgart_bt = &apos;/559&apos;.
+    IF iv_ipn = &apos;X&apos;.
+      lv_lgart_bt = &apos;/330&apos;.
+      REFRESH lr_lgart.
+      CLEAR lr_lgart.
+    ENDIF.
+    IF iv_opv = &apos;X&apos;.
+      lv_lgart_bt = &apos;/331&apos;.
+      REFRESH lr_lgart.
+      CLEAR lr_lgart.
+    ENDIF.
+    IF iv_osms = &apos;X&apos;.
+      lv_lgart_bt = &apos;/334&apos;.
+      REFRESH lr_lgart.
+      CLEAR lr_lgart.
+    ENDIF.
+
+
+    READ TABLE lt_rgdir INTO DATA(ls_rgdir) WITH KEY fpper = lv_inper
+                                                     inper = lv_inper.
+    IF sy-subrc EQ 0.
+      LOOP AT it_result INTO DATA(ls_result) WHERE evp-seqnr EQ ls_rgdir-seqnr.
+        LOOP AT ls_result-inter-bt INTO DATA(ls_bt) WHERE lgart EQ lv_lgart_bt.
+          IF ls_bt-dtadt EQ &apos;00000000&apos; OR ls_bt-dtadt GT lv_begda.
+            ADD ls_bt-betrg TO rv_saldo.
+          ENDIF.
+        ENDLOOP.
+      ENDLOOP.
+
+    ENDIF.
+
+
+
+*    SELECT * INTO TABLE @DATA(lt_bt) FROM reguh WHERE seqnr
+*                                                       AND pernr EQ @iv_pernr
+*                                                       AND lgart EQ @lv_lgart_bt
+**                                                       AND lgart EQ &apos;/559&apos;
+*                                                       AND ( dtadt GT @lv_begda OR
+*                                                       dtadt = &apos;00000000&apos; ).
+*
+*    SELECT * APPENDING TABLE lt_bt FROM t77paykzbt WHERE pernr EQ iv_pernr
+*                                                  AND lgart EQ lv_lgart_bt
+**                                                  AND lgart EQ &apos;/559&apos;
+*                                                  AND ( dtadt GT lv_begda OR
+*                                                  dtadt = &apos;00000000&apos; )
+*                                                  AND ipend BETWEEN lv_begper AND lv_endper
+*                                                  AND payty NE &apos;&apos;.
+
+
+    IF lr_lgart IS NOT INITIAL.
+      LOOP AT it_result INTO ls_result WHERE evp-seqnr EQ is_rgdir-seqnr.
+        LOOP AT ls_result-inter-rt INTO DATA(ls_rt) WHERE lgart IN lr_lgart.
+          CASE ls_rt-lgart.
+            WHEN &apos;/563&apos;.
+              SUBTRACT ls_rt-betrg FROM rv_saldo.
+            WHEN OTHERS.
+              ADD ls_rt-betrg TO rv_saldo.
+          ENDCASE.
+
+        ENDLOOP.
+      ENDLOOP.
+    ENDIF.
+
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_BT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="5 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_BT" SCONAME="IT_PAYRESULTS" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAY99_TAB_OF_RESULTS"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_BT" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BEGDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_BT" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="ENDDA" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_BT" SCONAME="IV_ISPLIST" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="4 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="BOOLEAN" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_BT" SCONAME="BT_WC_TABLE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="5 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM"/>
+   <source>METHOD ret_value_bt.
+
+    DATA wa_wc_sum TYPE mtys_wc_lgart_sum.
+
+    DATA(lv_begda) = iv_begda.
+    DATA(lv_endda) = iv_endda.
+
+    IF lv_begda IS INITIAL.
+      lv_begda = mv_begda.
+    ENDIF.
+
+    IF lv_endda IS INITIAL.
+      lv_endda = mv_endda.
+    ENDIF.
+
+*    DATA wa_sum TYPE mtys_lgart_sum.
+    LOOP AT mt_wcode INTO DATA(ls_wcode) WHERE wcsrc EQ &apos;B&apos;.
+      REPLACE ALL OCCURRENCES OF &apos;/&apos; IN ls_wcode-wcode WITH &apos;_&apos;.
+      DATA(ls_wc_wcode) = VALUE mtys_wc_lgart_sum( wcode = ls_wcode-wcode ).
+      &quot; Пробегаемся по всем ВО WCODE
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_lgart).
+        &quot; Пробегаемся по результатам расчета
+        LOOP AT it_payresults REFERENCE INTO DATA(lr_result) WHERE evp-srtza EQ &apos;A&apos; AND evp-fpbeg LE iv_endda
+                                                                                    AND evp-fpend GE iv_begda.
+
+          IF iv_isplist = &apos;X&apos;.
+            LOOP AT lr_result-&gt;inter-bt INTO DATA(ls_bt) WHERE lgart EQ ls_lgart-lgart. &quot;AND dtadt BETWEEN lv_begda AND lv_endda.
+              DATA(ls_sum) = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+              CASE ls_lgart-clcfd.
+                WHEN &apos;P&apos;.&quot;Переменное присвоение
+                  ADD ls_bt-betrg TO ls_sum-value.
+                  ls_sum-value_rt = ls_sum-value.
+                  ls_sum-zlsch = ls_bt-zlsch.
+                  ls_sum-emftx = ls_bt-emftx.
+                  ls_sum-iban = ls_bt-iban.
+                  ls_sum-btznr = ls_bt-btznr.
+                  ls_sum-dtadt = ls_bt-dtadt.
+                  ls_sum-crdid = ls_bt-crdid.
+                  ls_sum-bankl = ls_bt-bankl.
+                  ls_sum-banks = ls_bt-banks.
+                  ls_sum-bankn = ls_bt-bankn.
+                  ls_sum-BKORT = ls_bt-BKORT.
+                  ls_sum-BKPLZ = ls_bt-BKPLZ.
+                  ls_sum-STRAS = ls_bt-STRAS.
+                  READ TABLE lr_result-&gt;inter-rt INTO DATA(ls_rt) WITH KEY btznr = ls_sum-btznr.
+                  IF sy-subrc = 0.
+                    ls_sum-v0typ = ls_rt-v0typ.
+                    ls_sum-v0znr = ls_rt-v0znr.
+                  ENDIF.
+
+                  LOOP AT lr_result-&gt;inter-rt INTO ls_rt WHERE btznr NE ls_sum-btznr AND v0typ = ls_rt-v0typ AND v0znr = ls_rt-v0znr.
+                    ls_sum-value_post = ls_rt-betrg.
+                    READ TABLE lr_result-&gt;inter-v0 INTO DATA(ls_v0) WITH KEY v0typ  = ls_rt-v0typ
+                                                            v0znr = ls_rt-v0znr.
+
+                    IF sy-subrc = 0.
+                      ls_sum-grnum = ls_v0-vinfo(4).
+                    ENDIF.
+                    &quot;READ TABLE
+                  ENDLOOP.
+
+
+                WHEN OTHERS.
+                  ADD ls_bt-betrg TO ls_sum-value.
+                  ls_sum-value_rt = ls_sum-value.
+                  ls_sum-zlsch = ls_bt-zlsch.
+                  ls_sum-emftx = ls_bt-emftx.
+                  ls_sum-iban = ls_bt-iban.
+                  ls_sum-btznr = ls_bt-btznr.
+                  ls_sum-dtadt = ls_bt-dtadt.
+                  ls_sum-bankl = ls_bt-bankl.
+                  ls_sum-banks = ls_bt-banks.
+                  ls_sum-bankn = ls_bt-bankn.
+              ENDCASE.
+
+              &quot;
+              IF ls_lgart-inver IS NOT INITIAL.
+                MULTIPLY ls_sum-value BY -1.
+              ENDIF.
+              ls_sum-lgart = ls_bt-lgart.
+              COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+            ENDLOOP.
+          ELSE.
+            LOOP AT lr_result-&gt;inter-bt INTO ls_bt WHERE lgart EQ ls_lgart-lgart AND dtadt BETWEEN lv_begda AND lv_endda.
+              ls_sum = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+              CASE ls_lgart-clcfd.
+                WHEN &apos;P&apos;.&quot;Переменное присвоение
+                  ADD ls_bt-betrg TO ls_sum-value.
+                  ls_sum-value_rt = ls_sum-value.
+                  ls_sum-zlsch = ls_bt-zlsch.
+                  ls_sum-emftx = ls_bt-emftx.
+                  ls_sum-iban = ls_bt-iban.
+                  ls_sum-btznr = ls_bt-btznr.
+                  ls_sum-dtadt = ls_bt-dtadt.
+                  ls_sum-crdid = ls_bt-crdid.
+                  ls_sum-bankl = ls_bt-bankl.
+                  ls_sum-banks = ls_bt-banks.
+                  ls_sum-bankn = ls_bt-bankn.
+                  ls_sum-BKORT = ls_bt-BKORT.
+                  ls_sum-BKPLZ = ls_bt-BKPLZ.
+                  ls_sum-STRAS = ls_bt-STRAS.
+                  READ TABLE lr_result-&gt;inter-rt INTO ls_rt WITH KEY btznr = ls_sum-btznr.
+                  IF sy-subrc = 0.
+                    ls_sum-v0typ = ls_rt-v0typ.
+                    ls_sum-v0znr = ls_rt-v0znr.
+                  ENDIF.
+
+                  LOOP AT lr_result-&gt;inter-rt INTO ls_rt WHERE btznr NE ls_sum-btznr AND v0typ = ls_rt-v0typ AND v0znr = ls_rt-v0znr.
+                    ls_sum-value_post = ls_rt-betrg.
+                    READ TABLE lr_result-&gt;inter-v0 INTO ls_v0 WITH KEY v0typ  = ls_rt-v0typ
+                                                            v0znr = ls_rt-v0znr.
+
+                    IF sy-subrc = 0.
+                      ls_sum-grnum = ls_v0-vinfo(4).
+                    ENDIF.
+                    &quot;READ TABLE
+                  ENDLOOP.
+
+
+                WHEN OTHERS.
+                  ADD ls_bt-betrg TO ls_sum-value.
+                  ls_sum-value_rt = ls_sum-value.
+                  ls_sum-zlsch = ls_bt-zlsch.
+                  ls_sum-emftx = ls_bt-emftx.
+                  ls_sum-iban = ls_bt-iban.
+                  ls_sum-btznr = ls_bt-btznr.
+                  ls_sum-dtadt = ls_bt-dtadt.
+                  ls_sum-bankl = ls_bt-bankl.
+                  ls_sum-banks = ls_bt-banks.
+                  ls_sum-bankn = ls_bt-bankn.
+              ENDCASE.
+
+
+              IF ls_lgart-inver IS NOT INITIAL.
+                MULTIPLY ls_sum-value BY -1.
+              ENDIF.
+              ls_sum-lgart = ls_bt-lgart.
+              COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+            ENDLOOP.
+          ENDIF.
+        ENDLOOP.
+      ENDLOOP.
+      APPEND ls_wc_wcode TO bt_wc_table.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_INTER" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_INTER" SCONAME="IS_INTER" VERSION="1" LANGU="R" DESCRIPT="Structure for payroll result: Kazakhstan" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PAYKZ_RESULT"/>
+   <source>METHOD ret_value_inter.
+    LOOP AT mt_wcode REFERENCE INTO DATA(lr_wcode).
+*      data(lv_name) = value STRING( lr_wcode-&gt;WCSRC ).
+*      assign component ()
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_RESULT" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_RESULT" SCONAME="IT_PAYRESULTS" VERSION="1" LANGU="R" DESCRIPT="Table of PAYKZ_RESULT" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="HRPAYKZ_RESULT_TAB"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_VALUE_RESULT" SCONAME="RT_WC_TABLE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="MTYT_WC_LGART_SUM"/>
+   <source>METHOD ret_value_result.
+    DATA wa_wc_sum TYPE mtys_wc_lgart_sum.
+*    DATA wa_sum TYPE mtys_lgart_sum.
+    LOOP AT mt_wcode INTO DATA(ls_wcode) WHERE wcsrc EQ &apos;R&apos; OR wcsrc EQ &apos;A&apos;.
+      REPLACE ALL OCCURRENCES OF &apos;/&apos; IN ls_wcode-wcode WITH &apos;_&apos;.
+      DATA(ls_wc_wcode) = VALUE mtys_wc_lgart_sum( wcode = ls_wcode-wcode ).
+      &quot; Пробегаемся по всем ВО WCODE
+      LOOP AT ls_wcode-t_lgart INTO DATA(ls_lgart).
+        &quot; Пробегаемся по результатам расчета
+        LOOP AT it_payresults REFERENCE INTO DATA(lr_result).
+          LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt) WHERE lgart EQ ls_lgart-lgart.
+            DATA(ls_sum) = CORRESPONDING mtys_lgart_sum( ls_lgart ).
+            CASE ls_lgart-clcfd.
+              WHEN &apos;N&apos; OR &apos;X&apos;.
+                ADD ls_rt-anzhl TO ls_sum-value.
+              WHEN &apos;A&apos; OR &apos;Z&apos;.
+                ADD ls_rt-betrg TO ls_sum-value.
+                IF lr_result-&gt;evp-srtza NE &apos;A&apos;.
+                  MULTIPLY ls_sum-value BY -1.
+                ENDIF.
+            ENDCASE.
+            ls_sum-value_rt = ls_sum-value.
+            &quot;
+            IF ls_lgart-inver IS NOT INITIAL.
+              MULTIPLY ls_sum-value BY -1.
+            ENDIF.
+            ls_sum-lgart = ls_rt-lgart.
+            READ TABLE ls_wc_wcode-t_lgart TRANSPORTING NO FIELDS WITH KEY lgart = ls_sum-lgart.
+            IF sy-subrc NE 0.
+              IF lr_result-&gt;evp-srtza EQ &apos;A&apos;.
+*                LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt_DAYS) WHERE lgart EQ ls_lgart-DAYS_lgart.
+*                   ls_sum-value_DAYS = ls_sum-value_DAYS + ls_rt_DAYS-anzhl.
+*                ENDLOOP.
+*                LOOP AT lr_result-&gt;inter-rt INTO DATA(ls_rt_HOURS) WHERE lgart EQ ls_lgart-HOURS_lgart.
+*                   ls_sum-value_HOURS = ls_sum-value_HOURS + ls_rt_HOURS-anzhl.
+*                ENDLOOP.
+              ENDIF.
+            ENDIF.
+            COLLECT ls_sum INTO ls_wc_wcode-t_lgart.
+          ENDLOOP.
+        ENDLOOP.
+      ENDLOOP.
+      &quot;
+      APPEND ls_wc_wcode TO rt_wc_table.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_WCSRC" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="3 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_WCSRC" SCONAME="IV_WCSRC" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PKZ_WCSRC"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_WCSRC" SCONAME="RV_TNAME" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRING"/>
+   <source>METHOD ret_wcsrc.
+    rv_tname = SWITCH #( iv_wcsrc
+                           WHEN mc_wcsrc_bt  THEN mc_wctab_bt
+                           WHEN mc_wcsrc_rt  THEN mc_wctab_rt
+                           WHEN mc_wcsrc_rta THEN mc_wctab_rta
+                           ELSE space ).
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_WPBP_PERIO" VERSION="1" LANGU="R" EXPOSURE="2" STATE="1" EDITORDER="16 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="1" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_WPBP_PERIO" SCONAME="IS_WPBP" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PC205"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="RET_WPBP_PERIO" SCONAME="RV_PERIO" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="3" PARPASSTYP="0" TYPTYPE="1" TYPE="STRINGVAL"/>
+   <source>METHOD ret_wpbp_perio.
+      DATA: lv_fcmnr  TYPE fcmnr,
+            lv_fcktx  TYPE fcktx,
+            lv_fcltx  TYPE fcltx,
+            lv_beg    TYPE i,
+            lv_end    TYPE i,
+            lt_months TYPE TABLE OF t247.
+
+
+      lv_fcmnr = is_wpbp-endda+4(2).
+
+
+      CALL FUNCTION &apos;MONTH_NAMES_GET&apos;
+        EXPORTING
+          language    = sy-langu
+        TABLES
+          month_names = lt_months.
+
+      READ TABLE lt_months INTO DATA(ls_month) WITH KEY mnr = lv_fcmnr.
+
+      CHECK sy-subrc = 0.
+
+      TRANSLATE ls_month-ktx TO LOWER CASE.
+      TRANSLATE ls_month-ktx(1) TO UPPER CASE.
+
+
+      lv_beg = is_wpbp-begda+6(2).
+      lv_end = is_wpbp-endda+6(2).
+
+      rv_perio = |{ lv_beg }-{ lv_end } { ls_month-ktx } { is_wpbp-endda+2(2) }|.
+
+    ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SEL_TB_LGART" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="2 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SEL_TB_LGART" SCONAME="IT_R_WCODE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYT_R_WCODE"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SEL_TB_LGART" SCONAME="IV_BEGDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SEL_TB_LGART" SCONAME="IV_ENDDA" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS" PAROPTIONL="X"/>
+   <source>METHOD sel_tb_lgart.
+
+    DATA(lv_begda) = iv_begda.
+    DATA(lv_endda) = iv_endda.
+
+    IF lv_begda IS INITIAL.
+      lv_begda = mv_begda.
+    ENDIF.
+
+    IF lv_endda IS INITIAL.
+      lv_endda = mv_endda.
+    ENDIF.
+
+    &quot; Assigment Wage Type to Wage Code
+    SELECT
+        wcode,lgart,inver,clcfd
+      INTO TABLE @DATA(lt_lgart)
+      FROM t77paykzn2
+      WHERE wcode IN @it_r_wcode
+        AND begda LE @lv_endda
+        AND endda GE @lv_begda
+        ORDER BY lgart.
+    IF sy-subrc NE 0.
+      RETURN.
+    ENDIF.
+    &quot; ...
+    mt_wc_lgart[] = VALUE mtyt_wc_lgart( FOR ls_lgt IN lt_lgart ( wcode = ls_lgt-wcode
+                                                                  lgart = ls_lgt-lgart
+                                                                  inver = ls_lgt-inver
+                                                                  clcfd = ls_lgt-clcfd
+                                                                  ) ).
+    &quot;
+    DATA(lt_r_lgart) = VALUE mtyt_r_lgart( FOR ls_rlgt IN lt_lgart ( sign = mc_sign_i option = mc_opt_eq low = ls_rlgt-lgart ) ).
+    &quot; Текст к видам оплаты
+    SELECT
+        lgart,lgtxt,kztxt
+      INTO TABLE @DATA(lt_lgtxt)
+      FROM t512t
+      WHERE molga EQ @mc_molga
+        AND sprsl EQ @sy-langu
+        AND lgart IN @lt_r_lgart.
+    IF sy-subrc &lt;&gt; 0.
+      RETURN.
+    ENDIF.
+    &quot; Переносим в нашу таблицу все наименования
+    LOOP AT mt_wc_lgart ASSIGNING FIELD-SYMBOL(&lt;fs_wc_lgart&gt;).
+      TRY.
+          &lt;fs_wc_lgart&gt;-lgtxt = lt_lgtxt[ lgart = &lt;fs_wc_lgart&gt;-lgart ]-lgtxt.
+          &lt;fs_wc_lgart&gt;-kztxt = lt_lgtxt[ lgart = &lt;fs_wc_lgart&gt;-lgart ]-kztxt.
+        CATCH cx_sy_itab_line_not_found.
+          CONTINUE.
+      ENDTRY.
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+  <method CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SET_WCODE_TABLE" VERSION="1" LANGU="R" EXPOSURE="0" STATE="1" EDITORDER="1 " DISPID="0 " MTDTYPE="0" MTDDECLTYP="0" BCMTDCAT="00" BCMTDSYN="0">
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SET_WCODE_TABLE" SCONAME="IV_DATUM" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="1 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="DATS" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SET_WCODE_TABLE" SCONAME="IT_R_WCODE" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="2 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="MTYT_R_WCODE" PAROPTIONL="X"/>
+   <parameter CLSNAME="ZCL_HRPY_WCODE_NEW" CMPNAME="SET_WCODE_TABLE" SCONAME="IV_PROGNAME" VERSION="1" LANGU="R" CMPTYPE="1" MTDTYPE="0" EDITORDER="3 " DISPID="0 " PARDECLTYP="0" PARPASSTYP="1" TYPTYPE="1" TYPE="PROGNAME" PAROPTIONL="X"/>
+   <source>METHOD set_wcode_table.
+    &quot;
+    DATA(lt_r_wcode) = it_r_wcode[].
+
+    IF it_r_wcode IS INITIAL.
+      SELECT wcode,progname
+        FROM t77paykzn8
+        INTO TABLE @DATA(lt_t77paykzn8)
+        WHERE progname EQ @iv_progname.
+      IF sy-subrc &lt;&gt; 0.
+        RETURN.
+      ENDIF.
+      lt_r_wcode = VALUE mtyt_r_wcode( FOR ls_t77paykznr IN lt_t77paykzn8 ( sign = mc_sign_i option = mc_opt_eq low = ls_t77paykznr-wcode ) ).
+    ENDIF.
+
+    &quot; 1. Reference Text table of wage codes
+    SELECT wcode,name
+      FROM t77paykzn1
+      INTO TABLE @DATA(lt_t77paykzn)
+      WHERE wcode IN @lt_r_wcode
+        AND sprsl EQ @sy-langu
+        ORDER BY wcode.
+    IF sy-subrc &lt;&gt; 0.
+      RETURN.
+    ENDIF.
+
+    &quot; 2. Assigment Wage Type to Wage Code
+    me-&gt;sel_tb_lgart( lt_r_wcode ).
+
+    &quot; ...
+    LOOP AT lt_t77paykzn REFERENCE INTO DATA(lr_t77paykz).
+      APPEND VALUE mtys_wcode( wcode = lr_t77paykz-&gt;wcode name = lr_t77paykz-&gt;name ) TO mt_wcode.
+    ENDLOOP.
+
+    &quot; Reference table of wage codes
+    SELECT wcode,wcsrc
+      INTO TABLE @DATA(lt_wcsrc)
+      FROM t77paykznc
+      WHERE wcode IN @lt_r_wcode.
+    IF sy-subrc &lt;&gt; 0.
+      RETURN.
+    ENDIF.
+    &quot; Проставляем Таблицу
+    LOOP AT mt_wcode ASSIGNING FIELD-SYMBOL(&lt;fs_wcode&gt;).
+      TRY.
+          &lt;fs_wcode&gt;-wcsrc = lt_wcsrc[ wcode = &lt;fs_wcode&gt;-wcode ]-wcsrc.
+        CATCH cx_sy_itab_line_not_found.
+*          &quot; След. запись
+*          continue.
+      ENDTRY.
+      &quot; Таблица с Видами Оплат
+      &lt;fs_wcode&gt;-t_lgart[] = me-&gt;ret_lgart_table( &lt;fs_wcode&gt;-wcode ).
+    ENDLOOP.
+  ENDMETHOD.</source>
+  </method>
+ </CLAS>
+</nugget>
